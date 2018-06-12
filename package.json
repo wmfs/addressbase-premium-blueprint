@@ -1,33 +1,56 @@
 {
-  "name": "addressbase-premium-blueprint",
-  "version": "0.0.1",
-  "author": "Jez Higgins",
+  "name": "@wmfs/addressbase-premium-blueprint",
+  "version": "0.0.0-semantically-released",
+  "description": "Tymly blueprint to support Ordnance Survey's addressbase premium",
+  "author": "West Midlands Fire Service",
+  "homepage": "https://github.com/wmfs/addressbase-premium-blueprint#readme",
+  "keywords": [
+    "tymly",
+    "blueprint",
+    "models",
+    "state machines",
+    "low code"
+  ],
   "license": "MIT",
-  "scripts": {
-    "lint": "standard",
-    "test": "standard && mocha"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wmfs/tymly/blueprints/addressbase-premium-blueprint"
+    "url": "https://github.com/wmfs/addressbase-premium-blueprint.git"
   },
   "bugs": {
-    "url": "https://github.com/wmfs/tymly/issues"
+    "url": "https://github.com/wmfs/addressbase-premium-blueprint/issues"
   },
   "dependencies": {
     "deepmerge": "^2.1.0",
     "jsonpath": "1.0.0",
     "sax": "1.2.4",
-    "tymly": "^0.0.17",
-    "tymly-etl-plugin": "0.0.8"
+    "@wmfs/tymly": "1.0.1",
+    "@wmfs/tymly-etl-plugin": "1.0.0"
   },
   "devDependencies": {
     "chai": "4.1.2",
     "chai-string": "^1.4.0",
+    "codecov": "3.0.2",
+    "cz-conventional-changelog": "2.1.0",
     "dirty-chai": "2.0.1",
     "mocha": "5.2.0",
+    "nyc": "12.0.2",
     "rimraf": "2.6.2",
+    "semantic-release": "^15.5.0",
     "standard": "11.0.1",
-    "tymly-test-helpers": "0.0.1"
+    "@wmfs/tymly-test-helpers": "1.0.0"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "nyc mocha && standard",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
