@@ -25,7 +25,6 @@ function collapseMatchingLpis (uprnNode) {
     // merge into English. This is not a commentary on the history of our two great nations.
     const combinedLpi = deepmerge(englishLpi, welshLpi)
     uprnNode.landPropertyIdentifierMember[engI].LandPropertyIdentifier[0] = combinedLpi
-    console.log(englishLpi)
   }
 
   return uprnNode
