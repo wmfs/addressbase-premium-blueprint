@@ -62,11 +62,6 @@
           "type": "build",
           "scope": "deps",
           "release": "minor"
-        },
-        {
-          "type": "build",
-          "scope": "deps-dev",
-          "release": "patch"
         }
       ]
     }
