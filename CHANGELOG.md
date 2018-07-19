@@ -1,3 +1,17 @@
+# [1.10.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.9.0...v1.10.0) (2018-07-19)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly-etl-plugin requirement to 1.11.0 ([67ba999](https://github.com/wmfs/addressbase-premium-blueprint/commit/67ba999))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/changelog requirement to 2.1.2 ([bcce000](https://github.com/wmfs/addressbase-premium-blueprint/commit/bcce000))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/changelog requirement to 3.0.0 ([45e1a8d](https://github.com/wmfs/addressbase-premium-blueprint/commit/45e1a8d))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/git requirement to 6.0.2 ([561d5bd](https://github.com/wmfs/addressbase-premium-blueprint/commit/561d5bd))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/git requirement to 7.0.0 ([4dc0c85](https://github.com/wmfs/addressbase-premium-blueprint/commit/4dc0c85))
+* **deps-dev:** update [@semantic-release](https://github.com/semantic-release)/git requirement to 7.0.1 ([6e16c49](https://github.com/wmfs/addressbase-premium-blueprint/commit/6e16c49))
+* **deps-dev:** update semantic-release requirement to 15.8.0 ([6ad8e78](https://github.com/wmfs/addressbase-premium-blueprint/commit/6ad8e78))
+* **deps-dev:** update semantic-release requirement to 15.8.1 ([f1d26b3](https://github.com/wmfs/addressbase-premium-blueprint/commit/f1d26b3))
+
 # [1.9.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.8.0...v1.9.0) (2018-07-16)
 
 
