@@ -23,7 +23,7 @@
     "deepmerge": "^2.1.0",
     "jsonpath": "1.0.0",
     "sax": "1.2.4",
-    "@wmfs/tymly": "1.12.1",
+    "@wmfs/tymly": "1.13.0",
     "@wmfs/tymly-etl-plugin": "1.13.0"
   },
   "devDependencies": {
