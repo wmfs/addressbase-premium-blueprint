@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.12.0...v1.13.0) (2018-07-27)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly requirement to 1.12.1 ([80d5f2c](https://github.com/wmfs/addressbase-premium-blueprint/commit/80d5f2c))
+
 # [1.12.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.11.0...v1.12.0) (2018-07-26)
 
 
