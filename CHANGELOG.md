@@ -1,3 +1,23 @@
+# [1.20.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.19.0...v1.20.0) (2018-08-06)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly-etl-plugin requirement from 1.15.0 to 1.16.0 ([18ba3cb](https://github.com/wmfs/addressbase-premium-blueprint/commit/18ba3cb))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement to 1.18.0 ([7f32538](https://github.com/wmfs/addressbase-premium-blueprint/commit/7f32538))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement to 1.19.0 ([108ed36](https://github.com/wmfs/addressbase-premium-blueprint/commit/108ed36))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement to 1.20.0 ([bb89d2a](https://github.com/wmfs/addressbase-premium-blueprint/commit/bb89d2a))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement to 1.21.0 ([da83d77](https://github.com/wmfs/addressbase-premium-blueprint/commit/da83d77))
+* **deps-dev:** update [@wmfs](https://github.com/wmfs)/tymly-test-helpers requirement to 1.1.0 ([eb3acbb](https://github.com/wmfs/addressbase-premium-blueprint/commit/eb3acbb))
+* **deps-dev:** update semantic-release requirement from 15.9.3 to 15.9.5 ([04aca97](https://github.com/wmfs/addressbase-premium-blueprint/commit/04aca97))
+* **deps-dev:** update semantic-release requirement to 15.9.2 ([79bb827](https://github.com/wmfs/addressbase-premium-blueprint/commit/79bb827))
+* **deps-dev:** update semantic-release requirement to 15.9.3 ([fc6c9cd](https://github.com/wmfs/addressbase-premium-blueprint/commit/fc6c9cd))
+
+
+### ♻️ Chores
+
+* Update deepmerge to 2.1.1 ([f008144](https://github.com/wmfs/addressbase-premium-blueprint/commit/f008144))
+
 # [1.19.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.18.0...v1.19.0) (2018-07-30)
 
 
