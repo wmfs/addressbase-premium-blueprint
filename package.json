@@ -20,7 +20,7 @@
     "url": "https://github.com/wmfs/addressbase-premium-blueprint/issues"
   },
   "dependencies": {
-    "deepmerge": "^2.1.0",
+    "deepmerge": "2.1.1",
     "jsonpath": "1.0.0",
     "sax": "1.2.4",
     "@wmfs/tymly": "1.14.0",
