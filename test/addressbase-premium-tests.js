@@ -76,6 +76,12 @@ describe('process addressbase-premium', function () {
         }
       )
     })
+
+    it('kill output dir', () => {
+      if (fs.existsSync(outputDir)) {
+        rimraf.sync(outputDir)
+      }
+    })
   }) // start up
 
   describe('import the addressbase data', () => {
@@ -189,6 +195,25 @@ describe('process addressbase-premium', function () {
   })
 
   describe('synchronization', () => {
+    it('populate test data', async () => {
+      const sqlFile = path.resolve(__dirname, './fixtures/scripts/wmfs-gazetteer-setup.sql')
+      await client.runFile(sqlFile)
+    })
+
+    it('check for a single gazetteer record', async () => {
+      const result = await client.query('SELECT count(uprn) FROM wmfs.gazetteer')
+      const count = result.rows[0].count
+      expect(count).to.eql('1')
+    })
+
+    let existing
+    it('grab existing row', async () => {
+      const result = await client.query('SELECT * from wmfs.gazetteer')
+      expect(result.rowCount).to.eql(1)
+
+      existing = result.rows[0]
+    })
+
     it('run synchronize-addressbox-premium state machine', async () => {
       const executionDescription = await statebox.startExecution(
         {
@@ -207,7 +232,7 @@ describe('process addressbase-premium', function () {
 
     it('check the newly populated gazetteer table', async () => {
       const result = await client.query('SELECT uprn FROM wmfs.gazetteer ORDER BY uprn ASC;', [])
-      expect(result.rowCount).to.eql(21)
+      expect(result.rowCount).to.eql(22)
     })
 
     it('verify upserts output', () => {
@@ -215,6 +240,13 @@ describe('process addressbase-premium', function () {
       const upsertExpected = fs.readFileSync(syncExpectedFile, {encoding: 'utf8'}).split('\n').map(s => s.trim())
 
       expect(upsert).to.eql(upsertExpected)
+    })
+
+    it('pre-existing row is unchanged', async () => {
+      const result = await client.query(`SELECT * from wmfs.gazetteer WHERE uprn = ${existing.uprn}`)
+      expect(result.rowCount).to.eql(1)
+
+      expect(result.rows[0]).to.eql(existing)
     })
   })
 
