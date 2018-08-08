@@ -3,6 +3,7 @@ CREATE OR REPLACE VIEW ordnance_survey.addressbase_premium_holding AS
         property.lpi_key,
         property.lpi_status,
         property.uprn,
+        1 as counter,
         property.udprn,
         property.state,
         property.state_date,

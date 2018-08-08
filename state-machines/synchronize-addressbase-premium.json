@@ -1,0 +1,39 @@
+{
+  "Comment": "Synchronizes addressbase premium data with address box.",
+  "version": "1.0",
+  "StartAt": "SynchronizingTable",
+  "States": {
+    "SynchronizingTable": {
+      "Type": "Task",
+      "InputPath": "$.outputDir",
+      "Resource": "module:synchronizingTable",
+      "ResourceConfig": {
+        "transformerFunctionName": "wmfs_addressbaseConverter",
+        "source": {
+          "tableName": "ordnance_survey.addressbase_premium_holding",
+          "hashSumColumnName": "hash_sum"
+        },
+        "target": {
+          "tableName": "wmfs.gazetteer",
+          "hashSumColumnName": "origin_hash_sum",
+          "where": {
+            "data_source": { "equals": "OrdnanceSurvey" }
+          }
+        },
+        "join": {
+          "uprn": "uprn",
+          "counter": "counter"
+        }
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}
