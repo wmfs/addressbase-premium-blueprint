@@ -239,6 +239,9 @@ describe('process addressbase-premium', function () {
       const upsert = fs.readFileSync(syncUpsertsFile, {encoding: 'utf8'}).split('\n').map(s => s.trim())
       const upsertExpected = fs.readFileSync(syncExpectedFile, {encoding: 'utf8'}).split('\n').map(s => s.trim())
 
+      console.log(upsert)
+      console.log(upsertExpected)
+
       expect(upsert).to.contains(...upsertExpected)
     })
 
