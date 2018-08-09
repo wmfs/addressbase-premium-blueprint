@@ -251,7 +251,6 @@ describe('process addressbase-premium', function () {
     })
   })
 
-
   describe('close down', () => {
     it('clear down database', async () => {
       await client.query('DROP SCHEMA ordnance_survey CASCADE')
