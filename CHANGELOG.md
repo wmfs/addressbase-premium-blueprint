@@ -1,3 +1,35 @@
+# [1.25.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.24.0...v1.25.0) (2018-08-09)
+
+
+### ✨ Features
+
+* Move Addressbase Premium sync into this blueprint from Addressbox ([1cd6534](https://github.com/wmfs/addressbase-premium-blueprint/commit/1cd6534))
+
+
+### 🐛 Bug Fixes
+
+* Added placeholder index.js ([3418f90](https://github.com/wmfs/addressbase-premium-blueprint/commit/3418f90))
+* Removed categories from state-machines ([4fe27a4](https://github.com/wmfs/addressbase-premium-blueprint/commit/4fe27a4))
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly requirement from 1.15.1 to 1.15.2 ([9f7a07b](https://github.com/wmfs/addressbase-premium-blueprint/commit/9f7a07b))
+
+
+### 🚨 Tests
+
+* Additional test around gazetteer sync ([4ed0a32](https://github.com/wmfs/addressbase-premium-blueprint/commit/4ed0a32))
+* Another go at the assertion ([bcbc456](https://github.com/wmfs/addressbase-premium-blueprint/commit/bcbc456))
+* I hate to do this, but comment out assert which fails on Travis ([d122f2f](https://github.com/wmfs/addressbase-premium-blueprint/commit/d122f2f))
+* Switch asset from array equals to array contains. ([b5768ec](https://github.com/wmfs/addressbase-premium-blueprint/commit/b5768ec))
+* Trying to debug test failing on travis ([c4fa726](https://github.com/wmfs/addressbase-premium-blueprint/commit/c4fa726))
+
+
+### 💎 Styles
+
+* blank lines removed ([722639b](https://github.com/wmfs/addressbase-premium-blueprint/commit/722639b))
+
 # [1.24.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.23.0...v1.24.0) (2018-08-09)
 
 
