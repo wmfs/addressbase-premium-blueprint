@@ -239,7 +239,7 @@ describe('process addressbase-premium', function () {
       const upsert = fs.readFileSync(syncUpsertsFile, {encoding: 'utf8'}).split('\n').map(s => s.trim())
       const upsertExpected = fs.readFileSync(syncExpectedFile, {encoding: 'utf8'}).split('\n').map(s => s.trim())
 
-      expect(upsert).to.eql(upsertExpected)
+      expect(upsert).to.contains(...upsertExpected)
     })
 
     it('pre-existing row is unchanged', async () => {
