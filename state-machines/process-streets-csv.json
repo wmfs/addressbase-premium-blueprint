@@ -2,9 +2,6 @@
   "Comment": "Process streets.csv ",
   "version": "1.0",
   "StartAt": "ProcessStreetsCsvFiles",
-  "categories": [
-    "gazetteer"
-  ],
   "States": {
     "ProcessStreetsCsvFiles": {
       "Type": "Task",

@@ -2,9 +2,6 @@
   "Comment": "import properties csv into the database",
   "version": "1.0",
   "StartAt": "ImportPropertiesCsvFiles",
-  "categories": [
-    "gazetteer"
-  ],
   "States": {
     "ImportPropertiesCsvFiles": {
       "Type": "Task",

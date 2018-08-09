@@ -2,9 +2,6 @@
   "Comment": "Extract Properties information from AddressBase Premium GML",
   "version": "1.0",
   "StartAt": "ExtractProperties",
-  "categories": [
-    "gazetteer"
-  ],
   "States": {
     "ExtractProperties": {
       "Type": "Task",

@@ -2,9 +2,6 @@
   "Comment": "import streets csv into the database",
   "version": "1.0",
   "StartAt": "ImportStreetsCsvFiles",
-  "categories": [
-    "gazetteer"
-  ],
   "States": {
     "ImportStreetsCsvFiles": {
       "Type": "Task",

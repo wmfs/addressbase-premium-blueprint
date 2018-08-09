@@ -2,9 +2,6 @@
   "Comment": "Process properties.csv ",
   "version": "1.0",
   "StartAt": "ProcessPropertiesCsvFiles",
-  "categories": [
-    "gazetteer"
-  ],
   "States": {
     "ProcessPropertiesCsvFiles": {
       "Type": "Task",

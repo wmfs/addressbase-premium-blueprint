@@ -2,9 +2,6 @@
   "Comment": "Import Streets from AddressBase Premium GML",
   "version": "1.0",
   "StartAt": "ExtractStreets",
-  "categories": [
-    "gazetteer"
-  ],
   "States": {
     "ExtractStreets": {
       "Type": "Task",
