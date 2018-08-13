@@ -1,3 +1,16 @@
+# [1.29.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.28.0...v1.29.0) (2018-08-13)
+
+
+### ✨ Features
+
+* Added dummy index.js so we can import it. ([4c15919](https://github.com/wmfs/addressbase-premium-blueprint/commit/4c15919))
+
+
+### 🛠 Builds
+
+* **deps-dev:** update semantic-release requirement from 15.9.6 to 15.9.7 ([6315ff8](https://github.com/wmfs/addressbase-premium-blueprint/commit/6315ff8))
+* **deps-dev:** update semantic-release requirement from 15.9.7 to 15.9.8 ([b5845f6](https://github.com/wmfs/addressbase-premium-blueprint/commit/b5845f6))
+
 # [1.28.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.27.0...v1.28.0) (2018-08-09)
 
 
