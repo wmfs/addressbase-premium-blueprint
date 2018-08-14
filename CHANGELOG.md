@@ -1,3 +1,11 @@
+# [1.36.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.35.0...v1.36.0) (2018-08-14)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/gazetteer-blueprint requirement from 1.4.1 to 1.4.3 ([0a06562](https://github.com/wmfs/addressbase-premium-blueprint/commit/0a06562))
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement from 1.26.0 to 1.28.0 ([9a9e6c4](https://github.com/wmfs/addressbase-premium-blueprint/commit/9a9e6c4))
+
 # [1.35.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.34.0...v1.35.0) (2018-08-14)
 
 
