@@ -114,24 +114,24 @@ describe('process addressbase-premium', function () {
 
   describe('verify properties', () => {
     it('flattened csv outout', () => {
-      const property = fs.readFileSync(propertyFlattenedFile, {encoding: 'utf8'}).split('\n')
-      const propertyExpected = fs.readFileSync(propertyExpectedFile, {encoding: 'utf8'}).split('\n')
+      const property = fs.readFileSync(propertyFlattenedFile, { encoding: 'utf8' }).split('\n')
+      const propertyExpected = fs.readFileSync(propertyExpectedFile, { encoding: 'utf8' }).split('\n')
       expect(property).to.eql(propertyExpected)
     })
 
     it('smithereens output', () => {
-      const property = fs.readFileSync(propertyExpectedFile, {encoding: 'utf8'}).split('\n')
+      const property = fs.readFileSync(propertyExpectedFile, { encoding: 'utf8' }).split('\n')
         .map(line => line.replace(/"/g, '')) // strip quote marks
         .map(line => stripColumn(line, 4)) // strip changeState marker
 
-      const upsert = fs.readFileSync(propertiesUpsertsFile, {encoding: 'utf8'}).split('\r\n')
+      const upsert = fs.readFileSync(propertiesUpsertsFile, { encoding: 'utf8' }).split('\r\n')
         .map(line => stripColumn(line, 1)) // strip hashsum
 
       expect(property).to.eql(upsert)
     })
 
     it('database import', async () => {
-      const propertyLpis = fs.readFileSync(propertyExpectedFile, {encoding: 'utf8'}).split('\n')
+      const propertyLpis = fs.readFileSync(propertyExpectedFile, { encoding: 'utf8' }).split('\n')
         .map(line => line.split(',')[0]) // extract LPI
         .slice(1, -1) // drop header line, and empty last line
         .map(line => line.replace(/"/g, '')) // strip quote marks
@@ -147,24 +147,24 @@ describe('process addressbase-premium', function () {
 
   describe('verify streets', () => {
     it('flattened csv outout', () => {
-      const streets = fs.readFileSync(streetsFlattenedFile, {encoding: 'utf8'}).split('\n')
-      const streetsExpected = fs.readFileSync(streetsExpectedFile, {encoding: 'utf8'}).split('\n')
+      const streets = fs.readFileSync(streetsFlattenedFile, { encoding: 'utf8' }).split('\n')
+      const streetsExpected = fs.readFileSync(streetsExpectedFile, { encoding: 'utf8' }).split('\n')
       expect(streets).to.eql(streetsExpected)
     })
 
     it('smithereens output', () => {
-      const streets = fs.readFileSync(streetsExpectedFile, {encoding: 'utf8'}).split('\n')
+      const streets = fs.readFileSync(streetsExpectedFile, { encoding: 'utf8' }).split('\n')
         .map(line => line.replace(/"/g, '')) // strip quote marks
         .map(line => stripColumn(line, 1)) // strip changeState marker
 
-      const upsert = fs.readFileSync(streetsUpsertsFile, {encoding: 'utf8'}).split('\r\n')
+      const upsert = fs.readFileSync(streetsUpsertsFile, { encoding: 'utf8' }).split('\r\n')
         .map(line => stripColumn(line, 1)) // strip hashsum
 
       expect(upsert).to.eql(streets)
     })
 
     it('database import', async () => {
-      const streetsUsrns = fs.readFileSync(streetsExpectedFile, {encoding: 'utf8'}).split('\n')
+      const streetsUsrns = fs.readFileSync(streetsExpectedFile, { encoding: 'utf8' }).split('\n')
         .map(line => line.split(',')[0]) // extract USRN
         .slice(1, -1) // drop header line, and empty last line
         .map(line => line.replace(/"/g, '')) // strip quote marks
@@ -179,7 +179,7 @@ describe('process addressbase-premium', function () {
 
   describe('verify holding view', () => {
     it('database import', async () => {
-      const propertyLpis = fs.readFileSync(propertyExpectedFile, {encoding: 'utf8'}).split('\n')
+      const propertyLpis = fs.readFileSync(propertyExpectedFile, { encoding: 'utf8' }).split('\n')
         .slice(1, -1) // drop header line, and empty last line
         .filter(line => line.split(',')[1] === '1') // only look for active lpis
         .map(line => line.split(',')[0]) // extract LPI
@@ -236,8 +236,8 @@ describe('process addressbase-premium', function () {
     })
 
     it('verify upserts output', () => {
-      const upsert = fs.readFileSync(syncUpsertsFile, {encoding: 'utf8'}).split('\n').map(s => s.trim())
-      const upsertExpected = fs.readFileSync(syncExpectedFile, {encoding: 'utf8'}).split('\n').map(s => s.trim())
+      const upsert = fs.readFileSync(syncUpsertsFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())
+      const upsertExpected = fs.readFileSync(syncExpectedFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())
 
       expect(upsert.length).to.eql(upsertExpected.length)
       // expect(upsert).to.contains.members(upsertExpected)
