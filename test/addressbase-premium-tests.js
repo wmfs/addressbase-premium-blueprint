@@ -239,7 +239,6 @@ describe('process addressbase-premium', function () {
       expect(result.rowCount).to.eql(19)
     })
 
-
     it('verify upserts output', () => {
       const upsert = fs.readFileSync(syncUpsertsFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())
       const upsertExpected = fs.readFileSync(syncExpectedFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())
