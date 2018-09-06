@@ -1,0 +1,38 @@
+{
+  "Comment": "Synchronizes addressbase premium streets with wmfs gazetteer.",
+  "version": "1.0",
+  "StartAt": "SynchronizingTable",
+  "States": {
+    "SynchronizingTable": {
+      "Type": "Task",
+      "InputPath": "$.outputDir",
+      "Resource": "module:synchronizingTable",
+      "ResourceConfig": {
+        "transformerFunctionName": "ordnanceSurvey_addressbaseStreetsConverter",
+        "source": {
+          "tableName": "ordnance_survey.addressbase_premium_streets_holding",
+          "hashSumColumnName": "hash_sum"
+        },
+        "target": {
+          "tableName": "wmfs.streets",
+          "hashSumColumnName": "origin_hash_sum",
+          "where": {
+            "data_source": { "equals": "OrdnanceSurvey" }
+          }
+        },
+        "join": {
+          "usrn": "usrn"
+        }
+      },
+      "End": true
+    }
+  },
+  "restrictions": [
+    {
+      "roleId": "$authenticated",
+      "allows": [
+        "*"
+      ]
+    }
+  ]
+}

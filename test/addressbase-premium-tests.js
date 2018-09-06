@@ -226,14 +226,19 @@ describe('process addressbase-premium', function () {
       )
 
       expect(executionDescription.status).to.eql('SUCCEEDED')
-      expect(executionDescription.currentStateName).to.eql('SynchronizingTable')
       expect(executionDescription.ctx.outputDir).to.eql(syncOutputDir)
     })
 
-    it('check the newly populated gazetteer table', async () => {
+    it('check the newly populated gazetteer property table', async () => {
       const result = await client.query('SELECT uprn FROM wmfs.gazetteer ORDER BY uprn ASC;', [])
       expect(result.rowCount).to.eql(22)
     })
+
+    it('check the newly populated gazetteer streets table', async () => {
+      const result = await client.query('SELECT usrn FROM wmfs.streets ORDER BY usrn ASC;', [])
+      expect(result.rowCount).to.eql(19)
+    })
+
 
     it('verify upserts output', () => {
       const upsert = fs.readFileSync(syncUpsertsFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())

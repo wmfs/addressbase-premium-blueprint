@@ -1,29 +1,21 @@
 {
-  "Comment": "Synchronizes addressbase premium data with address box.",
+  "Comment": "Synchronizes addressbase premium data with wmfs gazetteer.",
   "version": "1.0",
-  "StartAt": "SynchronizingTable",
+  "StartAt": "SynchronizeProperties",
   "States": {
-    "SynchronizingTable": {
+    "SynchronizeProperties": {
       "Type": "Task",
-      "InputPath": "$.outputDir",
-      "Resource": "module:synchronizingTable",
+      "Resource": "module:runStateMachine",
       "ResourceConfig": {
-        "transformerFunctionName": "wmfs_addressbaseConverter",
-        "source": {
-          "tableName": "ordnance_survey.addressbase_premium_holding",
-          "hashSumColumnName": "hash_sum"
-        },
-        "target": {
-          "tableName": "wmfs.gazetteer",
-          "hashSumColumnName": "origin_hash_sum",
-          "where": {
-            "data_source": { "equals": "OrdnanceSurvey" }
-          }
-        },
-        "join": {
-          "uprn": "uprn",
-          "counter": "counter"
-        }
+        "stateMachine": "ordnanceSurvey_synchronizeAddressbasePremiumProperties_1_0"
+      },
+      "Next": "SynchronizeStreets"
+    },
+    "SynchronizeStreets": {
+      "Type": "Task",
+      "Resource": "module:runStateMachine",
+      "ResourceConfig": {
+        "stateMachine": "ordnanceSurvey_synchronizeAddressbasePremiumStreets_1_0"
       },
       "End": true
     }
