@@ -1,3 +1,20 @@
+# [1.62.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.61.0...v1.62.0) (2018-09-06)
+
+
+### ✨ Features
+
+* **sync:** Extend synchronizeAddressbasePremium to include streets as well as properties ([2f3a3da](https://github.com/wmfs/addressbase-premium-blueprint/commit/2f3a3da))
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([af622a3](https://github.com/wmfs/addressbase-premium-blueprint/commit/af622a3))
+
+
+### 💎 Styles
+
+* whitespace ([08e4914](https://github.com/wmfs/addressbase-premium-blueprint/commit/08e4914))
+
 # [1.61.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.60.0...v1.61.0) (2018-09-06)
 
 
