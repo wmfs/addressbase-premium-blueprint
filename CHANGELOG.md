@@ -1,3 +1,11 @@
+# [1.79.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.78.0...v1.79.0) (2018-09-12)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly-etl-plugin requirement ([728580e](https://github.com/wmfs/addressbase-premium-blueprint/commit/728580e))
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([224fe34](https://github.com/wmfs/addressbase-premium-blueprint/commit/224fe34))
+
 # [1.78.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.77.0...v1.78.0) (2018-09-12)
 
 
