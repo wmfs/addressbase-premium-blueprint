@@ -1,3 +1,10 @@
+# [1.107.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.106.0...v1.107.0) (2018-10-03)
+
+
+### 🛠 Builds
+
+* **deps:** update deepmerge requirement from 2.2.0 to 2.2.1 ([073a144](https://github.com/wmfs/addressbase-premium-blueprint/commit/073a144))
+
 # [1.106.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.105.0...v1.106.0) (2018-10-03)
 
 
