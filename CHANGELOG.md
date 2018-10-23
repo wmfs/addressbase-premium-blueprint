@@ -1,3 +1,12 @@
+# [1.131.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.130.0...v1.131.0) (2018-10-23)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([81f9626](https://github.com/wmfs/addressbase-premium-blueprint/commit/81f9626))
+* **deps-dev:** update semantic-release requirement ([dcfb7ba](https://github.com/wmfs/addressbase-premium-blueprint/commit/dcfb7ba))
+* **deps-dev:** update semantic-release requirement ([17bcc50](https://github.com/wmfs/addressbase-premium-blueprint/commit/17bcc50))
+
 # [1.130.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.129.0...v1.130.0) (2018-10-20)
 
 
