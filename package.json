@@ -23,7 +23,7 @@
     "deepmerge": "2.2.1",
     "@wmfs/gazetteer-blueprint": "1.6.0",
     "@wmfs/tymly-etl-plugin": "1.85.0",
-    "@wmfs/tymly-pg-plugin": "1.84.0"
+    "@wmfs/tymly-pg-plugin": "1.85.0"
   },
   "devDependencies": {
     "chai": "4.2.0",
