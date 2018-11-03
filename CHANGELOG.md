@@ -1,3 +1,11 @@
+# [1.146.0](https://github.com/wmfs/addressbase-premium-blueprin/compare/v1.145.0...v1.146.0) (2018-11-03)
+
+
+### 🛠 Builds
+
+* **deps:** update [@wmfs](https://github.com/wmfs)/tymly-pg-plugin requirement ([bf34965](https://github.com/wmfs/addressbase-premium-blueprin/commit/bf34965))
+* **deps-dev:** update semantic-release requirement ([3068a38](https://github.com/wmfs/addressbase-premium-blueprin/commit/3068a38))
+
 # [1.145.0](https://github.com/wmfs/addressbase-premium-blueprin/compare/v1.144.0...v1.145.0) (2018-11-01)
 
 
