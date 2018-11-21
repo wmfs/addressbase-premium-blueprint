@@ -1,3 +1,15 @@
+## [1.164.1](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.164.0...v1.164.1) (2018-11-21)
+
+
+### 🐛 Bug Fixes
+
+* Effective no-op to force semantic-release to bump the version number ([873bc8e](https://github.com/wmfs/addressbase-premium-blueprint/commit/873bc8e))
+
+
+### ♻️ Chores
+
+* **deps:** Update dependencies ([83911cb](https://github.com/wmfs/addressbase-premium-blueprint/commit/83911cb))
+
 # [1.164.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.163.0...v1.164.0) (2018-11-21)
 
 
