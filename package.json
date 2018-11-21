@@ -1,7 +1,7 @@
 {
   "name": "@wmfs/addressbase-premium-blueprint",
   "version": "0.0.0-semantically-released",
-  "description": "Tymly blueprint to support Ordnance Survey's addressbase premium",
+  "description": "Tymly blueprint to support Ordnance Survey's AddressBase Premium",
   "author": "West Midlands Fire Service",
   "homepage": "https://github.com/wmfs/addressbase-premium-blueprint#readme",
   "keywords": [
