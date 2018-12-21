@@ -1,3 +1,19 @@
+# [1.174.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.173.0...v1.174.0) (2018-12-21)
+
+
+### 🛠 Builds
+
+* **deps:** Update deepmerge requirement from 2.2.1 to 3.0.0 ([#368](https://github.com/wmfs/addressbase-premium-blueprint/issues/368)) ([75b69a0](https://github.com/wmfs/addressbase-premium-blueprint/commit/75b69a0))
+* **deps-dev:** Update semantic-release requirement from 15.12.2 to 15.13.1 ([e573457](https://github.com/wmfs/addressbase-premium-blueprint/commit/e573457))
+
+
+### ⚙️ Continuous Integrations
+
+* **circleci:** add circleci config ([390c4a0](https://github.com/wmfs/addressbase-premium-blueprint/commit/390c4a0))
+* **travis:** only build on master ([5b7fa70](https://github.com/wmfs/addressbase-premium-blueprint/commit/5b7fa70))
+* **travis:** only build on master ([7db3d1b](https://github.com/wmfs/addressbase-premium-blueprint/commit/7db3d1b))
+* **travis:** use node lts ([469a40c](https://github.com/wmfs/addressbase-premium-blueprint/commit/469a40c))
+
 # [1.173.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.172.0...v1.173.0) (2018-11-30)
 
 
