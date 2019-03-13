@@ -1,3 +1,16 @@
+## [1.174.1](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.174.0...v1.174.1) (2019-03-13)
+
+
+### 🐛 Bug Fixes
+
+* **deps:** Pull in etl-plugin 1.104 so we can mark fields as required. ([0c6f581](https://github.com/wmfs/addressbase-premium-blueprint/commit/0c6f581))
+* Correct paths for welsh_town, _dependant_locality, _double_dependant_locality. ([336af11](https://github.com/wmfs/addressbase-premium-blueprint/commit/336af11))
+
+
+### 🛠 Builds
+
+* **deps-dev:** Update [@semantic-release](https://github.com/semantic-release)/git requirement ([#369](https://github.com/wmfs/addressbase-premium-blueprint/issues/369)) ([03a02f0](https://github.com/wmfs/addressbase-premium-blueprint/commit/03a02f0))
+
 # [1.174.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.173.0...v1.174.0) (2018-12-21)
 
 
