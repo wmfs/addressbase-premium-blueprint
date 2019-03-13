@@ -15,7 +15,7 @@
           ["$.changeType", "changeType", "string"],
           ["$.state", "state", "number"],
           ["$.stateDate", "state_date", "date"],
-          ["@.streetDescription.en", "description", "string"],
+          ["@.streetDescription.en", "description", "string", "required"],
           ["@.locality.en", "locality","string"],
           ["@.townName.en", "town_name", "string"],
           ["@.administrativeArea.en", "administrative_area","string"],
