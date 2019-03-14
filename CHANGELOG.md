@@ -1,3 +1,10 @@
+## [1.174.2](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.174.1...v1.174.2) (2019-03-14)
+
+
+### 🐛 Bug Fixes
+
+* Grab welshThoroughfare and welshDependentThoroughfare properly ([88d98d6](https://github.com/wmfs/addressbase-premium-blueprint/commit/88d98d6))
+
 ## [1.174.1](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.174.0...v1.174.1) (2019-03-13)
 
 
