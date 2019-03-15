@@ -1,0 +1,18 @@
+{
+  "title": "propertyState",
+  "description": "provides a value to show the building state",
+  "primaryKey": ["value"],
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer",
+      "maxLength": 2
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 20
+    }
+  },
+  "required": ["value", "description"]
+}
+

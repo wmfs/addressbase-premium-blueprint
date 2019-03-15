@@ -1,0 +1,13 @@
+{
+  "propertyNames": [
+    "value",
+    "description"
+  ],
+  "data": [
+    ["1", "Under construction"],
+    ["2", "In use"],
+    ["3", "Unoccupied/vacant/derelict"],
+    ["4", "Demolished"],
+    ["6", "Planning permission granted"]
+  ]
+}
