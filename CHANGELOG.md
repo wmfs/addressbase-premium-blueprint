@@ -1,3 +1,10 @@
+# [1.175.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.174.2...v1.175.0) (2019-03-15)
+
+
+### ✨ Features
+
+* Add property state seed data ([9e2065f](https://github.com/wmfs/addressbase-premium-blueprint/commit/9e2065f))
+
 ## [1.174.2](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.174.1...v1.174.2) (2019-03-14)
 
 
