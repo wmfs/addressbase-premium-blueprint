@@ -1,3 +1,13 @@
+# [1.176.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.175.0...v1.176.0) (2019-06-27)
+
+
+### 🛠 Builds
+
+* **deps:** Update [@wmfs](https://github.com/wmfs)/gazetteer-blueprint requirement ([0e5b168](https://github.com/wmfs/addressbase-premium-blueprint/commit/0e5b168))
+* **deps-dev:** Update [@semantic-release](https://github.com/semantic-release)/git requirement ([7233514](https://github.com/wmfs/addressbase-premium-blueprint/commit/7233514))
+* **deps-dev:** Update rimraf requirement from 2.6.2 to 2.6.3 ([438bba3](https://github.com/wmfs/addressbase-premium-blueprint/commit/438bba3))
+* **deps-dev:** Update semantic-release requirement ([9016839](https://github.com/wmfs/addressbase-premium-blueprint/commit/9016839))
+
 # [1.175.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.174.2...v1.175.0) (2019-03-15)
 
 
