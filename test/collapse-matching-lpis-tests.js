@@ -192,35 +192,49 @@ describe('collapse-matching-lpis', () => {
       expect(lpi0.lpiKey[0]['#text']).to.eql('6940L000299640')
       expect(lpi1.lpiKey[0]['#text']).to.eql('6940L000000038')
     })
-/*
-  <abpr:landPropertyIdentifierMember>
-    <abpr:LandPropertyIdentifier>
-      <abpr:lpiKey>6940L000000038</abpr:lpiKey>
-      <abpr:logicalStatus>8</abpr:logicalStatus>
-    </abpr:LandPropertyIdentifier>
-    </abpr:landPropertyIdentifierMember>
-  <abpr:landPropertyIdentifierMember>
-    <abpr:LandPropertyIdentifier>
-    <abpr:startDate>2016-01-22</abpr:startDate>
-    <abpr:lastUpdateDate>2016-02-07</abpr:lastUpdateDate>
-    <abpr:entryDate>2016-01-18</abpr:entryDate>
-    <abpr:lpiKey>6940L000150332</abpr:lpiKey>
-    <abpr:logicalStatus>1</abpr:logicalStatus>
-    <abpr:paoStartNumber>17</abpr:paoStartNumber>
-    <abpr:paoStartSuffix>A</abpr:paoStartSuffix>
-    </abpr:LandPropertyIdentifier>
-  </abpr:landPropertyIdentifierMember>
-  <abpr:landPropertyIdentifierMember>
-    <abpr:LandPropertyIdentifier>
-    <abpr:startDate>2018-09-05</abpr:startDate>
-    <abpr:lastUpdateDate>2018-09-22</abpr:lastUpdateDate>
-    <abpr:entryDate>2018-06-27</abpr:entryDate>
-    <abpr:lpiKey>6940L000299640</abpr:lpiKey>
-    <abpr:logicalStatus>1</abpr:logicalStatus>
-    <abpr:paoStartNumber>17</abpr:paoStartNumber>
-    <abpr:paoStartSuffix>A</abpr:paoStartSuffix>
-  </abpr:LandPropertyIdentifier>
-*/
   })
 
+  describe('matching status, text to merge', () => {
+    it('paoText in both languages', () => {
+      const uprnNode = {
+        landPropertyIdentifierMember: [
+          {
+            LandPropertyIdentifier: [{
+              'startDate': [{ '#text': '2007-10-26' }],
+              'lastUpdateDate': [{ '#text': '2016-02-10' }],
+              'entryDate': [{ '#text': '2013-01-09' }],
+              'lpiKey': [{ '#text': '6950L000063307' }],
+              'logicalStatus': [{'#text': '1' }],
+              'paoText': [{ 'en': [{ '#text': 'ST ATHAN RECREATION GROUND' }] }],
+              'usrn': [{ '#text': '41500415' }],
+              'usrnMatchIndicator': [{ '#text': '1' }]
+            }]
+          },
+          {
+            LandPropertyIdentifier: [{
+              'startDate': [{ '#text': '2012-12-05' }],
+              'lastUpdateDate': [{ '#text': '2016-02-10' }],
+              'entryDate': [{ '#text': '2013-01-09' }],
+              'lpiKey': [{ '#text': '6950L000281013' }],
+              'logicalStatus': [{ '#text': '1' }],
+              'paoText': [{ 'cy': [{ '#text': 'ST ATHAN RECREATION GROUND' }] }],
+              'usrn': [{ '#text': '41500415' }],
+              'usrnMatchIndicator': [{ '#text': '1' }]
+            }]
+          }
+        ]
+      }
+
+      collapseMatchingLpis(uprnNode)
+
+      expect(uprnNode.landPropertyIdentifierMember.length).to.eql(1)
+      const lpi = uprnNode.landPropertyIdentifierMember[0].LandPropertyIdentifier[0]
+      // take most recent
+      expect(lpi.paoText.length).to.eql(2)
+      expect(lpi.paoText).to.have.deep.members([
+        { 'cy': [{ '#text': 'ST ATHAN RECREATION GROUND' }] },
+        { 'en': [{ '#text': 'ST ATHAN RECREATION GROUND' }] }
+      ])
+    })
+  })
 })

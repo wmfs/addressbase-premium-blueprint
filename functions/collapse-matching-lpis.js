@@ -1,5 +1,3 @@
-const deepmerge = require('deepmerge')
-
 function collapseMatchingLpis (uprnNode) {
   // In the addressbase premium data, we can have two LandPropertyIdentifier objects with
   // the same LPI Key and Status if, and only if, it has an address in both English and Welsh.
@@ -16,7 +14,12 @@ function collapseMatchingLpis (uprnNode) {
     for (const lpiM of dupe) {
       const offset = lpiOffset(uprnNode, lpiM)
       uprnNode.landPropertyIdentifierMember.splice(offset, 1)
+
+      mergeLpis(targetLpi, lpiM)
     }
+
+    const targetOffset = lpiOffset(uprnNode, targetLpi)
+    uprnNode.landPropertyIdentifierMember.splice(targetOffset, 1, targetLpi)
   }
   /* for (const lpiKey of dupes) {
     const [engI, englishLpi] = findEnglish(uprnNode, lpiKey)
@@ -37,6 +40,36 @@ function collapseMatchingLpis (uprnNode) {
 
   return uprnNode
 } // collapseMatchingLpis
+
+function mergeLpis(targetLpi, lpiM) {
+  for (const k of Object.keys(lpiM.LandPropertyIdentifier[0])) {
+    mergeField(
+      targetLpi.LandPropertyIdentifier[0],
+      lpiM.LandPropertyIdentifier[0],
+      k
+    )
+  }
+}
+
+function mergeField(targetLpi, lpiM, field) {
+  const value = lpiM[field]
+
+  // if field doesn't exist in target, just merge
+  if (!targetLpi[field]) {
+    targetLpi[field] = value
+    return
+  }
+
+  const isText = (Object.keys(value[0])[0]) === '#text'
+  if (isText) {
+    return // just text, so bail out
+  }
+
+  // mixed language!
+  for(const v of value) {
+    targetLpi[field].push(v)
+  }
+}
 
 function lpiOffset (uprnNode, lpiM) {
   let index = 0;
@@ -76,14 +109,6 @@ function hasLanguage (lpiM, langLabel) {
   } // for ...
   return false
 } // hasLanguage
-
-function findEnglish (uprnNode, lpiKey) {
-  return findLpi(uprnNode, lpiKey, 'en')
-} // findEnglish
-
-function findWelsh (uprnNode, lpiKey) {
-  return findLpi(uprnNode, lpiKey, 'cy')
-} // findWelsh
 
 function lpiStatuses (uprnNode) {
   const statuses = new Set(
