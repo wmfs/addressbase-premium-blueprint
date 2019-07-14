@@ -7,10 +7,18 @@ function collapseMatchingLpis (uprnNode) {
   const lpiCount = uprnNode.landPropertyIdentifierMember.length
   if (lpiCount === 1) return uprnNode // nothing to do, so bail
 
-  const dupes = duplicateKeys(uprnNode)
+  const dupes = keysWithSameStatus(uprnNode)
   if (dupes.length === 0) return uprnNode
 
-  for (const lpiKey of dupes) {
+  for (const dupe of dupes) {
+    const targetLpi = dupe.shift()
+
+    for (const lpiM of dupe) {
+      const offset = lpiOffset(uprnNode, lpiM)
+      uprnNode.landPropertyIdentifierMember.splice(offset, 1)
+    }
+  }
+  /* for (const lpiKey of dupes) {
     const [engI, englishLpi] = findEnglish(uprnNode, lpiKey)
     const [welshI, welshLpi] = findWelsh(uprnNode, lpiKey)
 
@@ -25,14 +33,20 @@ function collapseMatchingLpis (uprnNode) {
     // merge into English. This is not a commentary on the history of our two great nations.
     const combinedLpi = deepmerge(englishLpi, welshLpi)
     uprnNode.landPropertyIdentifierMember[engI].LandPropertyIdentifier[0] = combinedLpi
-  }
+  } */
 
   return uprnNode
 } // collapseMatchingLpis
 
-function lpiKeyValue (lpiM) {
-  return lpiM.LandPropertyIdentifier[0].lpiKey[0]['#text']
-} // lpiKeyValue
+function lpiOffset (uprnNode, lpiM) {
+  let index = 0;
+  const key = lpiKeyValue(lpiM)
+  for (const l of uprnNode.landPropertyIdentifierMember) {
+    if (lpiKeyValue(l) === key) return index
+    ++index
+  }
+  return -1
+}
 
 function findLpi (uprnNode, lpiKey, langLabel) {
   const lpiMs = uprnNode.landPropertyIdentifierMember
@@ -71,17 +85,54 @@ function findWelsh (uprnNode, lpiKey) {
   return findLpi(uprnNode, lpiKey, 'cy')
 } // findWelsh
 
-function duplicateKeys (uprnNode) {
-  const lpiKeys = uprnNode.landPropertyIdentifierMember.map(lpiM => lpiKeyValue(lpiM)).sort()
-  const dupes = lpiKeys.reduce((dupes, key) => {
-    if (dupes[dupes.length - 1] !== key) dupes.pop()
-    dupes.push(key)
-    return dupes
-  }, [null])
-  dupes.pop()
-  return dupes
+function lpiStatuses (uprnNode) {
+  const statuses = new Set(
+    uprnNode.landPropertyIdentifierMember.map(lpiM => lpiStatus(lpiM))
+  );
+  return [...statuses]
+}
+
+function keysWithSameStatus (uprnNode) {
+  const sameStatusKeys = lpiStatuses(uprnNode)
+    .map(status =>
+      uprnNode.landPropertyIdentifierMember
+        .filter(lpiM => lpiStatus(lpiM) === status)
+        .sort(lpiDateSort)
+    )
+    .filter(keys => keys.length > 1)
+  return sameStatusKeys
 } // duplicateKeys
 
-module.exports = function (ctx) {
+function lpiKeyValue (lpiM) {
+  return lpiProperty(lpiM, 'lpiKey')
+} // lpiKeyValue
+
+function lpiStatus (lpiM) {
+  return lpiProperty(lpiM, 'logicalStatus')
+} // lpiKeyValue
+
+function lpiUpdateDate (lpiM) {
+  return lpiProperty(lpiM, 'lastUpdateDate')
+}
+
+function lpiProperty (lpiM, field) {
+  return lpiM.LandPropertyIdentifier[0][field][0]['#text']
+}
+
+function lpiDateSort (l, r) {
+  const lDate = lpiUpdateDate(l)
+  const rDate = lpiUpdateDate(r)
+
+  if (lDate && rDate) {
+    if (lDate === rDate) return 0
+    return (lDate > rDate) ? -1 : 1
+  }
+
+  const lKey = lpiKeyValue(l)
+  const rKey = lpiKeyValue(r)
+  return (lKey < rKey) ? -1 : 1
+}
+
+module.exports = function () {
   return collapseMatchingLpis
 }
