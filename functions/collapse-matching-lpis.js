@@ -21,27 +21,11 @@ function collapseMatchingLpis (uprnNode) {
     const targetOffset = lpiOffset(uprnNode, targetLpi)
     uprnNode.landPropertyIdentifierMember.splice(targetOffset, 1, targetLpi)
   }
-  /* for (const lpiKey of dupes) {
-    const [engI, englishLpi] = findEnglish(uprnNode, lpiKey)
-    const [welshI, welshLpi] = findWelsh(uprnNode, lpiKey)
-
-    // remove the welsh lpiM
-    uprnNode.landPropertyIdentifierMember.splice(welshI, 1)
-    // strip out stuff which isn't welsh text
-    for (const k of Object.keys(welshLpi)) {
-      if (welshLpi[k][0]['#text']) {
-        delete welshLpi[k]
-      }
-    }
-    // merge into English. This is not a commentary on the history of our two great nations.
-    const combinedLpi = deepmerge(englishLpi, welshLpi)
-    uprnNode.landPropertyIdentifierMember[engI].LandPropertyIdentifier[0] = combinedLpi
-  } */
 
   return uprnNode
 } // collapseMatchingLpis
 
-function mergeLpis(targetLpi, lpiM) {
+function mergeLpis (targetLpi, lpiM) {
   for (const k of Object.keys(lpiM.LandPropertyIdentifier[0])) {
     mergeField(
       targetLpi.LandPropertyIdentifier[0],
@@ -51,7 +35,7 @@ function mergeLpis(targetLpi, lpiM) {
   }
 }
 
-function mergeField(targetLpi, lpiM, field) {
+function mergeField (targetLpi, lpiM, field) {
   const value = lpiM[field]
 
   // if field doesn't exist in target, just merge
@@ -66,13 +50,13 @@ function mergeField(targetLpi, lpiM, field) {
   }
 
   // mixed language!
-  for(const v of value) {
+  for (const v of value) {
     targetLpi[field].push(v)
   }
 }
 
 function lpiOffset (uprnNode, lpiM) {
-  let index = 0;
+  let index = 0
   const key = lpiKeyValue(lpiM)
   for (const l of uprnNode.landPropertyIdentifierMember) {
     if (lpiKeyValue(l) === key) return index
@@ -81,51 +65,21 @@ function lpiOffset (uprnNode, lpiM) {
   return -1
 }
 
-function findLpi (uprnNode, lpiKey, langLabel) {
-  const lpiMs = uprnNode.landPropertyIdentifierMember
-  for (let i = 0; i !== lpiMs.length; ++i) {
-    const lpiM = lpiMs[i]
-    if (lpiKeyValue(lpiM) !== lpiKey) {
-      continue
-    }
-    // aha! now, does it have the right language?
-    // search down for language label
-    if (hasLanguage(lpiM, langLabel)) {
-      return [i, lpiM.LandPropertyIdentifier[0]]
-    }
-  } // for ...
-
-  throw new Error(`Could not find LPI with key ${lpiKey} and language ${langLabel}`)
-} // findLpi
-
-function hasLanguage (lpiM, langLabel) {
-  const lpi = lpiM.LandPropertyIdentifier[0]
-  for (const va of Object.values(lpi)) {
-    // all the values are arrays of length 1
-    // containing an object with either a '#text' member or a language member
-    if (va[0][langLabel]) {
-      return true
-    }
-  } // for ...
-  return false
-} // hasLanguage
-
 function lpiStatuses (uprnNode) {
   const statuses = new Set(
     uprnNode.landPropertyIdentifierMember.map(lpiM => lpiStatus(lpiM))
-  );
+  )
   return [...statuses]
 }
 
 function keysWithSameStatus (uprnNode) {
-  const sameStatusKeys = lpiStatuses(uprnNode)
+  return lpiStatuses(uprnNode)
     .map(status =>
       uprnNode.landPropertyIdentifierMember
         .filter(lpiM => lpiStatus(lpiM) === status)
         .sort(lpiDateSort)
     )
     .filter(keys => keys.length > 1)
-  return sameStatusKeys
 } // duplicateKeys
 
 function lpiKeyValue (lpiM) {

@@ -11,8 +11,8 @@ describe('collapse-matching-lpis', () => {
         landPropertyIdentifierMember: [
           {
             LandPropertyIdentifier: [{
-              lpiKey: [{'#text': '123458'}],
-              logicalStatus: [{'#text': '1'}]
+              lpiKey: [{ '#text': '123458' }],
+              logicalStatus: [{ '#text': '1' }]
             }]
           }
         ]
@@ -28,14 +28,14 @@ describe('collapse-matching-lpis', () => {
         landPropertyIdentifierMember: [
           {
             LandPropertyIdentifier: [{
-              lpiKey: [{'#text': '123458'}],
-              logicalStatus: [{'#text': '1'}]
+              lpiKey: [{ '#text': '123458' }],
+              logicalStatus: [{ '#text': '1' }]
             }]
           },
           {
             LandPropertyIdentifier: [{
-              lpiKey: [{'#text': '123459'}],
-              logicalStatus: [{'#text': '8'}]
+              lpiKey: [{ '#text': '123459' }],
+              logicalStatus: [{ '#text': '8' }]
             }]
           }
         ]
@@ -51,20 +51,20 @@ describe('collapse-matching-lpis', () => {
         landPropertyIdentifierMember: [
           {
             LandPropertyIdentifier: [{
-              lpiKey: [{'#text': '123458'}],
-              logicalStatus: [{'#text': '1'}]
+              lpiKey: [{ '#text': '123458' }],
+              logicalStatus: [{ '#text': '1' }]
             }]
           },
           {
             LandPropertyIdentifier: [{
-              lpiKey: [{'#text': '123459'}],
-              logicalStatus: [{'#text': '8'}]
+              lpiKey: [{ '#text': '123459' }],
+              logicalStatus: [{ '#text': '8' }]
             }]
           },
           {
             LandPropertyIdentifier: [{
-              lpiKey: [{'#text': '123429'}],
-              logicalStatus: [{'#text': '6'}]
+              lpiKey: [{ '#text': '123429' }],
+              logicalStatus: [{ '#text': '6' }]
             }]
           }
         ]
@@ -204,7 +204,7 @@ describe('collapse-matching-lpis', () => {
               'lastUpdateDate': [{ '#text': '2016-02-10' }],
               'entryDate': [{ '#text': '2013-01-09' }],
               'lpiKey': [{ '#text': '6950L000063307' }],
-              'logicalStatus': [{'#text': '1' }],
+              'logicalStatus': [{ '#text': '1' }],
               'paoText': [{ 'en': [{ '#text': 'ST ATHAN RECREATION GROUND' }] }],
               'usrn': [{ '#text': '41500415' }],
               'usrnMatchIndicator': [{ '#text': '1' }]
