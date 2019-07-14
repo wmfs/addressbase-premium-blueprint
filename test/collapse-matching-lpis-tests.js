@@ -149,6 +149,49 @@ describe('collapse-matching-lpis', () => {
       expect(lpi.lpiKey[0]['#text']).to.eql('6940L000299640')
     })
 
+    it('two lpis, one other', () => {
+      const uprnNode = {
+        landPropertyIdentifierMember: [
+          {
+            LandPropertyIdentifier: [{
+              startDate: [{ '#text': '2018-09-05' }],
+              lastUpdateDate: [{ '#text': '2018-09-22' }],
+              entryDate: [{ '#text': '2018-06-27' }],
+              lpiKey: [{ '#text': '6940L000299640' }],
+              logicalStatus: [{ '#text': '1' }],
+              paoStartNumber: [{ '#text': '17' }],
+              paoStartSuffix: [{ '#text': 'A' }]
+            }]
+          },
+          {
+            LandPropertyIdentifier: [{
+              startDate: [{ '#text': '2016-01-22' }],
+              lastUpdateDate: [{ '#text': '2016-02-07' }],
+              entryDate: [{ '#text': '2016-01-18' }],
+              lpiKey: [{ '#text': '6940L000150332' }],
+              logicalStatus: [{ '#text': '1' }],
+              paoStartNumber: [{ '#text': '17' }],
+              paoStartSuffix: [{ '#text': 'A' }]
+            }]
+          },
+          {
+            LandPropertyIdentifier: [{
+              lpiKey: [{ '#text': '6940L000000038' }],
+              logicalStatus: [{ '#text': '8' }]
+            }]
+          }
+        ]
+      }
+
+      collapseMatchingLpis(uprnNode)
+
+      expect(uprnNode.landPropertyIdentifierMember.length).to.eql(2)
+      const lpi0 = uprnNode.landPropertyIdentifierMember[0].LandPropertyIdentifier[0]
+      const lpi1 = uprnNode.landPropertyIdentifierMember[1].LandPropertyIdentifier[0]
+      // take most recent
+      expect(lpi0.lpiKey[0]['#text']).to.eql('6940L000299640')
+      expect(lpi1.lpiKey[0]['#text']).to.eql('6940L000000038')
+    })
 /*
   <abpr:landPropertyIdentifierMember>
     <abpr:LandPropertyIdentifier>
