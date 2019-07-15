@@ -1,3 +1,26 @@
+# [1.177.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.176.0...v1.177.0) (2019-07-15)
+
+
+### ✨ Features
+
+* lpi fix ([72b250d](https://github.com/wmfs/addressbase-premium-blueprint/commit/72b250d))
+
+
+### 🛠 Builds
+
+* **deps-dev:** Update nyc requirement from 13.1.0 to 14.1.1 ([eed3519](https://github.com/wmfs/addressbase-premium-blueprint/commit/eed3519))
+
+
+### 📚 Documentation
+
+* add circleci status [skip ci] ([55a149e](https://github.com/wmfs/addressbase-premium-blueprint/commit/55a149e))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** Update CircleCI config - Travis migration ([6643de4](https://github.com/wmfs/addressbase-premium-blueprint/commit/6643de4))
+* **travis:** remove Travis config ([60de5bc](https://github.com/wmfs/addressbase-premium-blueprint/commit/60de5bc))
+
 # [1.176.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.175.0...v1.176.0) (2019-06-27)
 
 
