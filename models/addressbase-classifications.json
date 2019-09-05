@@ -35,6 +35,15 @@
     },
     "quaternaryDesc": {
       "type": "string"
+    },
+    "largeIcon": {
+      "type": "string"
+    },
+    "smallIcon": {
+      "type": "string"
+    },
+    "generalDesc": {
+      "type": "string"
     }
   }
 }
