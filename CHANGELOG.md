@@ -1,3 +1,15 @@
+# [1.178.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.177.0...v1.178.0) (2019-09-06)
+
+
+### ✨ Features
+
+* **model updated and seed data updated accordingly:** New model properties and seed data updated to ([d041e66](https://github.com/wmfs/addressbase-premium-blueprint/commit/d041e66))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** Add npm registry auth ([0a67bcf](https://github.com/wmfs/addressbase-premium-blueprint/commit/0a67bcf))
+
 # [1.177.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.176.0...v1.177.0) (2019-07-15)
 
 
