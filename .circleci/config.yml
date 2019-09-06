@@ -22,7 +22,9 @@ jobs:
       - checkout
       - run:
           name: install
-          command: npm install
+          command: |
+            npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm install
       - run:
           name: test
           command: npm test
@@ -40,7 +42,9 @@ jobs:
     - checkout
     - run:
         name: install
-        command: npm install
+        command: |
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm install
     - run:
         name: release
         command: npx semantic-release
