@@ -20,7 +20,7 @@
     "url": "https://github.com/wmfs/addressbase-premium-blueprint/issues"
   },
   "dependencies": {
-    "@wmfs/gazetteer-blueprint": "1.18.0",
+    "@wmfs/gazetteer-blueprint": "1.21.0",
     "@wmfs/tymly-etl-plugin": "1.110.0",
     "@wmfs/tymly-pg-plugin": "1.131.0"
   },
