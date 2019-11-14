@@ -2,7 +2,7 @@
   "label": "Gazetteer",
   "description": "Gazetteer",
   "style": {
-    "icon": "fireSafety",
+    "icon": "gazetteer",
     "backgroundColor": "#008800"
   }
 }
