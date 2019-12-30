@@ -1,3 +1,33 @@
+# [1.184.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.183.0...v1.184.0) (2019-12-30)
+
+
+### 🛠 Builds
+
+* **deps:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.131.0 to 1.137.0 ([fc04bd1](https://github.com/wmfs/addressbase-premium-blueprint/commit/fc04bd1b33f1a5e7487acdc5ceb1f6fa5553455b))
+* **deps-dev:** add [@semantic-release](https://github.com/semantic-release)/exec ([50c60e1](https://github.com/wmfs/addressbase-premium-blueprint/commit/50c60e1ba1d5bae4397f1a07fb67e7f85ef4b8a4))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-test-helpers from 1.2.0 to 1.4.0 ([8a4c2e8](https://github.com/wmfs/addressbase-premium-blueprint/commit/8a4c2e8e910e277964752bd821203f278e94593a))
+* **deps-dev:** Bump conventional-changelog-metahub from 2.0.2 to 3.0.0 ([5fb8912](https://github.com/wmfs/addressbase-premium-blueprint/commit/5fb8912faf551ea37bde9faf535391b63f23c0b8))
+* **deps-dev:** Update codecov requirement from 3.5.0 to 3.6.1 ([c88cddd](https://github.com/wmfs/addressbase-premium-blueprint/commit/c88cddd3593807b81bb403309c67e525d620225e))
+* **deps-dev:** Update rimraf requirement from 2.6.3 to 3.0.0 ([fd879bb](https://github.com/wmfs/addressbase-premium-blueprint/commit/fd879bbb3b2950145bcf1a57e9a42871016b76db))
+
+
+### 📦 Code Refactoring
+
+* tidy up categories and update names (fireSafety, incidents) ([2125ef5](https://github.com/wmfs/addressbase-premium-blueprint/commit/2125ef5598c36893fc2c1a76bf3c77eac38d48da))
+
+
+### ⚙️ Continuous Integrations
+
+* chmod version_blueprint script ([b5bd1c2](https://github.com/wmfs/addressbase-premium-blueprint/commit/b5bd1c251cd66f3dcd77fb67cb1b6ef2d2030332))
+* fix typo ([0d26ffb](https://github.com/wmfs/addressbase-premium-blueprint/commit/0d26ffbc8f7620189d65a20eaa76df907dd52402))
+
+
+### ♻️ Chores
+
+* add blueprint version script ([df73655](https://github.com/wmfs/addressbase-premium-blueprint/commit/df73655e937d8b000d95cc53493b0d8f87510540))
+* update semantic-release config ([5049ab4](https://github.com/wmfs/addressbase-premium-blueprint/commit/5049ab401363b191f933456ae129fe949e04c87d))
+* update semantic-release config [ch27] ([320a4c9](https://github.com/wmfs/addressbase-premium-blueprint/commit/320a4c92becaf8fb3d48e42a29c85c6f2501ef3f))
+
 # [1.183.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.182.0...v1.183.0) (2019-09-11)
 
 
