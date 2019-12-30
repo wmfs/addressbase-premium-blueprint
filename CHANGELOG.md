@@ -1,3 +1,12 @@
+# [1.185.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.184.0...v1.185.0) (2019-12-30)
+
+
+### 🛠 Builds
+
+* **deps:** Bump [@wmfs](https://github.com/wmfs)/gazetteer-blueprint from 1.18.0 to 1.21.1 ([bff21c7](https://github.com/wmfs/addressbase-premium-blueprint/commit/bff21c73dc18bf1bb225142e68b68d9f9ecde2bf))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.98.0 to 1.103.3 ([d56ee55](https://github.com/wmfs/addressbase-premium-blueprint/commit/d56ee55fb86ca0e1dbbeed27c869808365c9a535))
+* **deps-dev:** Bump mocha from 6.2.0 to 6.2.2 ([b7f24da](https://github.com/wmfs/addressbase-premium-blueprint/commit/b7f24da2435eb20b107c3adb1c76e199bfde2627))
+
 # [1.184.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.183.0...v1.184.0) (2019-12-30)
 
 
