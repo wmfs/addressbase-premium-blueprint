@@ -20,9 +20,6 @@
     "url": "https://github.com/wmfs/addressbase-premium-blueprint/issues"
   },
   "dependencies": {
-    "@wmfs/gazetteer-blueprint": "1.21.1",
-    "@wmfs/tymly-etl-plugin": "1.110.0",
-    "@wmfs/tymly-pg-plugin": "1.137.0"
   },
   "devDependencies": {
     "chai": "4.2.0",
@@ -40,7 +37,10 @@
     "@semantic-release/git": "7.0.18",
     "@semantic-release/exec": "3.3.8",
     "@wmfs/tymly": "1.103.3",
-    "@wmfs/tymly-test-helpers": "1.4.0"
+    "@wmfs/tymly-test-helpers": "1.4.0",
+    "@wmfs/gazetteer-blueprint": "1.21.1",
+    "@wmfs/tymly-etl-plugin": "1.110.0",
+    "@wmfs/tymly-pg-plugin": "1.137.0"
   },
   "scripts": {
     "lint": "standard",
