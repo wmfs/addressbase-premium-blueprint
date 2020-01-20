@@ -45,5 +45,37 @@
     "generalDesc": {
       "type": "string"
     }
-  }
+  },
+  "indexes": [
+    {
+      "columns": [
+        "concatenated"
+      ],
+      "unique": true
+    },
+    {
+      "columns": [
+        "class_desc"
+      ],
+      "unique": false
+    },
+    {
+      "columns": [
+        "general_desc"
+      ],
+      "unique": false
+    },
+    {
+      "columns": [
+        "small_icon"
+      ],
+      "unique": false
+    },
+    {
+      "columns": [
+        "large_icon"
+      ],
+      "unique": false
+    }
+  ]
 }
