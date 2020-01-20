@@ -1,3 +1,48 @@
+# [1.186.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.185.0...v1.186.0) (2020-01-20)
+
+
+### ✨ Features
+
+* add indexes to classification model ([dd025ee](https://github.com/wmfs/addressbase-premium-blueprint/commit/dd025eeff897976b2249dc602c84c978266c3baf))
+
+
+### 🛠 Builds
+
+* **deps-dev:** Bump [@semantic-release](https://github.com/semantic-release)/changelog from 3.0.4 to 3.0.6 ([964b503](https://github.com/wmfs/addressbase-premium-blueprint/commit/964b50345dc7405ca982c1f739ff5eeae39f89db))
+* **deps-dev:** Bump [@semantic-release](https://github.com/semantic-release)/exec from 3.3.7 to 3.3.8 ([1677791](https://github.com/wmfs/addressbase-premium-blueprint/commit/16777914c0526a81aaa8b170a9bb74e0c263abd6))
+* **deps-dev:** Bump [@semantic-release](https://github.com/semantic-release)/git from 7.0.16 to 7.0.18 ([16453b5](https://github.com/wmfs/addressbase-premium-blueprint/commit/16453b5da76294496ca3ee12e3b23f6ef22bdbdb))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.103.3 to 1.104.0 ([f474b0e](https://github.com/wmfs/addressbase-premium-blueprint/commit/f474b0e12f4f4a1dfea1c75eed08be4b2cb74846))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.104.0 to 1.105.0 ([87ded23](https://github.com/wmfs/addressbase-premium-blueprint/commit/87ded2339acdb3cb5690fbd5ee514e9d4e138cd9))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.105.0 to 1.106.0 ([ac6ce32](https://github.com/wmfs/addressbase-premium-blueprint/commit/ac6ce32cbf98fa3c57385c4cf84bf626ca7dfa7a))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.106.0 to 1.107.0 ([4883062](https://github.com/wmfs/addressbase-premium-blueprint/commit/48830628c887cddc4e547aee40cdc9ded4e3d9bb))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.107.0 to 1.108.0 ([097b4a8](https://github.com/wmfs/addressbase-premium-blueprint/commit/097b4a852cfd4830341ea31b2961f1d12cd296f6))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.107.0 to 1.109.0 ([af9c96e](https://github.com/wmfs/addressbase-premium-blueprint/commit/af9c96ed645ce2627dc3c166a7d9eb1af6a11237))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.109.0 to 1.110.0 ([c4da8a9](https://github.com/wmfs/addressbase-premium-blueprint/commit/c4da8a9bf71705464c4aa779fc4f61fa962803ce))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-etl-plugin from 1.110.0 to 1.111.0 ([54be26a](https://github.com/wmfs/addressbase-premium-blueprint/commit/54be26a3dd362c8fa42f1344b7868065aa30144a))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-etl-plugin from 1.111.0 to 1.112.0 ([a5dfb12](https://github.com/wmfs/addressbase-premium-blueprint/commit/a5dfb1213fa268f3649142f4810f276c435f7a6a))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-etl-plugin from 1.112.0 to 1.113.0 ([2700730](https://github.com/wmfs/addressbase-premium-blueprint/commit/2700730c6d2fbea4598889758f59c37b42c77b09))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-etl-plugin from 1.113.0 to 1.114.0 ([252e510](https://github.com/wmfs/addressbase-premium-blueprint/commit/252e51088b63e0be2b0c9be3b9d0f50fd4b349c5))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-etl-plugin from 1.114.0 to 1.116.0 ([28bcc34](https://github.com/wmfs/addressbase-premium-blueprint/commit/28bcc349ab5cf83676fe13a4388d552d8ade5158))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-etl-plugin from 1.116.0 to 1.117.0 ([3688850](https://github.com/wmfs/addressbase-premium-blueprint/commit/3688850a60902c85f69850c66162fb43c9967040))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.137.0 to 1.140.0 ([25067da](https://github.com/wmfs/addressbase-premium-blueprint/commit/25067daec98bf1c339596696e7be472c97c693bd))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.140.0 to 1.141.0 ([bdafc45](https://github.com/wmfs/addressbase-premium-blueprint/commit/bdafc4512aef584a977e250308c9551c7332f5e4))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.141.0 to 1.142.0 ([ecbea7c](https://github.com/wmfs/addressbase-premium-blueprint/commit/ecbea7cfb9e0679099a76318f9ef539ee6f38c0c))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.142.0 to 1.143.0 ([da16dbe](https://github.com/wmfs/addressbase-premium-blueprint/commit/da16dbe4f83a5411cb257f56168d9984629fd607))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.143.0 to 1.144.0 ([51c1b46](https://github.com/wmfs/addressbase-premium-blueprint/commit/51c1b466477c605ee1f6ded0150ba9f2bf498fa9))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.144.0 to 1.146.0 ([f00102c](https://github.com/wmfs/addressbase-premium-blueprint/commit/f00102c56d48745e011e13b396a31048b73ac478))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.146.0 to 1.147.0 ([82716ab](https://github.com/wmfs/addressbase-premium-blueprint/commit/82716ab4121c06e2b694c7a1740737e06ec0c44f))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.146.0 to 1.148.0 ([561358f](https://github.com/wmfs/addressbase-premium-blueprint/commit/561358f3cfe89b4569581c7c9d6f489d4c986ef5))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.148.0 to 1.151.0 ([2c1a745](https://github.com/wmfs/addressbase-premium-blueprint/commit/2c1a745f09a99d9dae91a83f9fc4f386f897b989))
+* **deps-dev:** Bump conventional-changelog-metahub from 3.0.0 to 4.0.0 ([90cd2c0](https://github.com/wmfs/addressbase-premium-blueprint/commit/90cd2c04f3490d22c6cd985462120a722b4d41bf))
+* **deps-dev:** Bump mocha from 6.2.2 to 7.0.0 ([d0db87b](https://github.com/wmfs/addressbase-premium-blueprint/commit/d0db87bb36540784c35756464ec1c7e2f42c1fad))
+* **deps-dev:** Bump nyc from 14.1.1 to 15.0.0 ([f3fbeff](https://github.com/wmfs/addressbase-premium-blueprint/commit/f3fbeffc41cc80a1b1bb11beee5a5f6030bf0aef))
+* **deps-dev:** Bump semantic-release from 15.13.24 to 15.14.0 ([194abf6](https://github.com/wmfs/addressbase-premium-blueprint/commit/194abf6869c001cf091be6b5f95c45f9cbf67d1e))
+
+
+### ♻️ Chores
+
+* move dependencies to dev dependencies ([11e0811](https://github.com/wmfs/addressbase-premium-blueprint/commit/11e0811aa932c9e491a3fda2f74308ab170e02c9))
+
 # [1.185.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.184.0...v1.185.0) (2019-12-30)
 
 
