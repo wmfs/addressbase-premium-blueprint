@@ -1,3 +1,15 @@
+## [1.186.1](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.186.0...v1.186.1) (2020-01-21)
+
+
+### 🐛 Bug Fixes
+
+* remove audit trigger from models ([d92086b](https://github.com/wmfs/addressbase-premium-blueprint/commit/d92086bc62c7816fdf7f1f3bcad3bbef95698319))
+
+
+### 🛠 Builds
+
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/gazetteer-blueprint from 1.21.1 to 1.22.0 ([838a2e4](https://github.com/wmfs/addressbase-premium-blueprint/commit/838a2e49829812b88ebacca0e89f8d5442f7232c))
+
 # [1.186.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.185.0...v1.186.0) (2020-01-20)
 
 
