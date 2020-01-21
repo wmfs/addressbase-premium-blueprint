@@ -3,6 +3,7 @@
   "description": "Record of streets from AddressBase Premium data",
   "primaryKey": ["usrn"],
   "type": "object",
+  "audit": false,
   "properties": {
     "usrn": {
       "type": "integer",

@@ -3,6 +3,7 @@
   "description": "Identifies at which point the street record is within its lifecycle",
   "primaryKey": ["value"],
   "type": "object",
+  "audit": false,
   "properties": {
     "value": {
       "type": "integer",

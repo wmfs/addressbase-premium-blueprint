@@ -3,6 +3,7 @@
   "description": "Identifies the surface finish of the street",
   "primaryKey": ["value"],
   "type": "object",
+  "audit": false,
   "properties": {
     "value": {
       "type": "integer",

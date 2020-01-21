@@ -5,6 +5,7 @@
     "concatenated"
   ],
   "type": "object",
+  "audit": false,
   "properties": {
     "concatenated": {
       "type": "string"

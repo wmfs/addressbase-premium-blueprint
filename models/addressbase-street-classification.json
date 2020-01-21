@@ -3,6 +3,7 @@
   "description": "a value denoting the primary classification of the street record",
   "primaryKey": ["value"],
   "type": "object",
+  "audit": false,
   "properties": {
     "value": {
       "type": "integer",

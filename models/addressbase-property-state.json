@@ -3,6 +3,7 @@
   "description": "provides a value to show the building state",
   "primaryKey": ["value"],
   "type": "object",
+  "audit": false,
   "properties": {
     "value": {
       "type": "integer",

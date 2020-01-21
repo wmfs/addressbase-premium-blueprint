@@ -3,6 +3,7 @@
   "description": "Record of address types from AddressBase data",
   "primaryKey": ["lpiKey"],
   "type": "object",
+  "audit": false,
   "properties": {
     "lpiKey": {
       "type": "string",
