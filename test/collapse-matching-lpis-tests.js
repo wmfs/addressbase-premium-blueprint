@@ -200,26 +200,26 @@ describe('collapse-matching-lpis', () => {
         landPropertyIdentifierMember: [
           {
             LandPropertyIdentifier: [{
-              'startDate': [{ '#text': '2007-10-26' }],
-              'lastUpdateDate': [{ '#text': '2016-02-10' }],
-              'entryDate': [{ '#text': '2013-01-09' }],
-              'lpiKey': [{ '#text': '6950L000063307' }],
-              'logicalStatus': [{ '#text': '1' }],
-              'paoText': [{ 'en': [{ '#text': 'ST ATHAN RECREATION GROUND' }] }],
-              'usrn': [{ '#text': '41500415' }],
-              'usrnMatchIndicator': [{ '#text': '1' }]
+              startDate: [{ '#text': '2007-10-26' }],
+              lastUpdateDate: [{ '#text': '2016-02-10' }],
+              entryDate: [{ '#text': '2013-01-09' }],
+              lpiKey: [{ '#text': '6950L000063307' }],
+              logicalStatus: [{ '#text': '1' }],
+              paoText: [{ en: [{ '#text': 'ST ATHAN RECREATION GROUND' }] }],
+              usrn: [{ '#text': '41500415' }],
+              usrnMatchIndicator: [{ '#text': '1' }]
             }]
           },
           {
             LandPropertyIdentifier: [{
-              'startDate': [{ '#text': '2012-12-05' }],
-              'lastUpdateDate': [{ '#text': '2016-02-10' }],
-              'entryDate': [{ '#text': '2013-01-09' }],
-              'lpiKey': [{ '#text': '6950L000281013' }],
-              'logicalStatus': [{ '#text': '1' }],
-              'paoText': [{ 'cy': [{ '#text': 'ST ATHAN RECREATION GROUND' }] }],
-              'usrn': [{ '#text': '41500415' }],
-              'usrnMatchIndicator': [{ '#text': '1' }]
+              startDate: [{ '#text': '2012-12-05' }],
+              lastUpdateDate: [{ '#text': '2016-02-10' }],
+              entryDate: [{ '#text': '2013-01-09' }],
+              lpiKey: [{ '#text': '6950L000281013' }],
+              logicalStatus: [{ '#text': '1' }],
+              paoText: [{ cy: [{ '#text': 'ST ATHAN RECREATION GROUND' }] }],
+              usrn: [{ '#text': '41500415' }],
+              usrnMatchIndicator: [{ '#text': '1' }]
             }]
           }
         ]
@@ -232,8 +232,8 @@ describe('collapse-matching-lpis', () => {
       // take most recent
       expect(lpi.paoText.length).to.eql(2)
       expect(lpi.paoText).to.have.deep.members([
-        { 'cy': [{ '#text': 'ST ATHAN RECREATION GROUND' }] },
-        { 'en': [{ '#text': 'ST ATHAN RECREATION GROUND' }] }
+        { cy: [{ '#text': 'ST ATHAN RECREATION GROUND' }] },
+        { en: [{ '#text': 'ST ATHAN RECREATION GROUND' }] }
       ])
     })
   })
