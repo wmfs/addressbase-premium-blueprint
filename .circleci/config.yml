@@ -53,6 +53,7 @@ workflows:
   test_and_release:
     jobs:
     - test
+        context: tymly_global
     - release:
         context: tymly_global
         requires:
