@@ -85,4 +85,4 @@ CREATE OR REPLACE VIEW ordnance_survey.addressbase_premium_holding AS
 FROM ordnance_survey.addressbase_premium_property_holding property
     JOIN ordnance_survey.addressbase_premium_streets_holding street
     ON (property.usrn = street.usrn)
-WHERE (property.lpi_status = 1 and property.pao_text != 'STREET RECORD');
+WHERE (property.lpi_status = 1 and (property.pao_text is NULL or property.pao_text != 'STREET RECORD'));
