@@ -1,4 +1,6 @@
-module.exports = function () {
+module.exports = function (ctx) {
+  const models = ctx.blueprintComponents.models
+
   function convertConflictsToRewind () {
 
   }
