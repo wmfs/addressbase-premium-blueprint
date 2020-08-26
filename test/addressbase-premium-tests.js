@@ -20,7 +20,8 @@ describe('process addressbase-premium', function () {
   const outputDir = path.resolve(fixture, 'output')
   const streetsOutputDir = path.resolve(outputDir, 'streets')
   const propertyOutputDir = path.resolve(outputDir, 'property')
-  const syncOutputDir = path.resolve(outputDir, 'sync')
+  const streetsSyncOutputDir = path.resolve(streetsOutputDir, 'sync')
+  const propertySyncOutputDir = path.resolve(propertyOutputDir, 'sync')
 
   const expectedDir = path.resolve(fixture, 'expected')
 
@@ -35,7 +36,7 @@ describe('process addressbase-premium', function () {
   const propertiesUpsertsFile = path.resolve(propertyOutputDir, 'upserts', 'addressbase_premium_property_holding.csv')
 
   const syncExpectedFile = path.resolve(expectedDir, 'sync.csv')
-  const syncUpsertsFile = path.resolve(syncOutputDir, 'upserts', 'gazetteer.csv')
+  const syncInsertsFile = path.resolve(propertySyncOutputDir, 'inserts', 'gazetteer.csv')
 
   before(async () => {
     if (process.env.PG_CONNECTION_STRING && !/^postgres:\/\/[^:]+:[^@]+@(?:localhost|127\.0\.0\.1).*$/.test(process.env.PG_CONNECTION_STRING)) {
@@ -217,7 +218,12 @@ describe('process addressbase-premium', function () {
     it('run synchronize-addressbox-premium state machine', async () => {
       const executionDescription = await statebox.startExecution(
         {
-          outputDir: syncOutputDir
+          streets: {
+            outputDir: streetsSyncOutputDir
+          },
+          property: {
+            outputDir: propertySyncOutputDir
+          }
         }, // input
         'ordnanceSurvey_synchronizeAddressbasePremium_1_0', // state machine name
         {
@@ -226,7 +232,6 @@ describe('process addressbase-premium', function () {
       )
 
       expect(executionDescription.status).to.eql('SUCCEEDED')
-      expect(executionDescription.ctx.outputDir).to.eql(syncOutputDir)
     })
 
     it('check the newly populated gazetteer property table', async () => {
@@ -239,11 +244,11 @@ describe('process addressbase-premium', function () {
       expect(result.rowCount).to.eql(19)
     })
 
-    it('verify upserts output', () => {
-      const upsert = fs.readFileSync(syncUpsertsFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())
-      const upsertExpected = fs.readFileSync(syncExpectedFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())
+    it('verify inserts output', () => {
+      const inserts = fs.readFileSync(syncInsertsFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())
+      const insertsExpected = fs.readFileSync(syncExpectedFile, { encoding: 'utf8' }).split('\n').map(s => s.trim())
 
-      expect(upsert.length).to.eql(upsertExpected.length)
+      expect(inserts.length).to.eql(insertsExpected.length)
       // expect(upsert).to.contains.members(upsertExpected)
     })
 
