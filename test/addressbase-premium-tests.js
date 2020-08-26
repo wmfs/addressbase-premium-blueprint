@@ -53,37 +53,32 @@ describe('process addressbase-premium', function () {
   let statebox
   let client
 
-  describe('start up', () => {
-    it('start Tymly service', (done) => {
-      tymly.boot(
-        {
-          pluginPaths: [
-            require.resolve('@wmfs/tymly-etl-plugin'),
-            require.resolve('@wmfs/tymly-test-helpers/plugins/allow-everything-rbac-plugin'),
-            require.resolve('@wmfs/tymly-pg-plugin')
-          ],
-          blueprintPaths: [
-            path.resolve(__dirname, './..'),
-            path.resolve(__dirname, './fixtures/test-blueprint'),
-            require.resolve('@wmfs/gazetteer-blueprint')
-          ]
-        },
-        (err, tymlyServices) => {
-          if (err) return done(err)
-          tymlyService = tymlyServices.tymly
-          statebox = tymlyServices.statebox
-          client = tymlyServices.storage.client
-          done()
-        }
-      )
-    })
-
-    it('kill output dir', () => {
-      if (fs.existsSync(outputDir)) {
-        rimraf.sync(outputDir)
+  before('start Tymly service', async () => {
+    const tymlyServices = await tymly.boot(
+      {
+        pluginPaths: [
+          require.resolve('@wmfs/tymly-etl-plugin'),
+          require.resolve('@wmfs/tymly-test-helpers/plugins/allow-everything-rbac-plugin'),
+          require.resolve('@wmfs/tymly-pg-plugin')
+        ],
+        blueprintPaths: [
+          path.resolve(__dirname, './..'),
+          path.resolve(__dirname, './fixtures/test-blueprint'),
+          require.resolve('@wmfs/gazetteer-blueprint')
+        ]
       }
-    })
-  }) // start up
+    )
+
+    tymlyService = tymlyServices.tymly
+    statebox = tymlyServices.statebox
+    client = tymlyServices.storage.client
+  })
+
+  before('kill output dir', () => {
+    if (fs.existsSync(outputDir)) {
+      rimraf.sync(outputDir)
+    }
+  })
 
   describe('import the addressbase data', () => {
     it('run the execution to process the XML file', async () => {
@@ -260,15 +255,13 @@ describe('process addressbase-premium', function () {
     })
   })
 
-  describe('close down', () => {
-    it('clear down database', async () => {
-      await client.query('DROP SCHEMA ordnance_survey CASCADE')
-      await client.query('DROP SCHEMA wmfs CASCADE')
-    })
+  after('clear down database', async () => {
+    await client.query('DROP SCHEMA ordnance_survey CASCADE')
+    await client.query('DROP SCHEMA wmfs CASCADE')
+  })
 
-    it('shutdown Tymly', () => {
-      return tymlyService.shutdown()
-    })
+  after('shutdown Tymly', () => {
+    return tymlyService.shutdown()
   })
 
   function stripColumn (line, index) {
