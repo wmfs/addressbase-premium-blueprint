@@ -9,7 +9,7 @@ const path = require('path')
 
 describe('transform conflicts file to rewind audit entry', function () {
   this.timeout(process.env.TIMEOUT || 5000)
-  let tymlyService, conflictConvertor
+  let tymlyService, conflictConvertor, gazetteerModel
 
   before('set up tymly', async () => {
     const tymlyServices = await tymly.boot(
@@ -28,6 +28,7 @@ describe('transform conflicts file to rewind audit entry', function () {
     )
 
     tymlyService = tymlyServices.tymly
+    gazetteerModel = tymlyService.blueprintComponents.models.wmfs_gazetteer
     conflictConvertor = tymlyServices.functions.functions.ordnanceSurvey_importConflictConvertor
   })
 
@@ -61,6 +62,20 @@ describe('transform conflicts file to rewind audit entry', function () {
       post_town: 'Legville',
       postcode: 'LG1 2PR'
     })
+  })
+
+  it('json to rewind row', () => {
+    const json = {
+      uprn: '12345678',
+      counter: '1',
+      street_name_1: '1 Trouser Street'
+    }
+
+    const rewind = conflictConvertor.func.jsonToRewind(json, gazetteerModel)
+
+    expect(rewind).to.eql(
+      'wmfs.gazetteer,12345678_1,\'{"uprn":"12345678","counter":"1","street_name_1":"1 Trouser Street"}\',\'{"action":"conflict"}\''
+    )
   })
 
   after('shutdown tymly', async () => {

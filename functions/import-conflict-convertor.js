@@ -9,6 +9,7 @@ module.exports = function (ctx) {
 
   convertConflictsToRewind.columnNames = columnNames
   convertConflictsToRewind.lineToJson = lineToJson
+  convertConflictsToRewind.jsonToRewind = jsonToRewind
 
   return convertConflictsToRewind
 }
@@ -40,7 +41,6 @@ function columnNames (line) {
 } // columnNames
 
 function lineToJson (line, columnNames) {
-
   const columns = csvParse(line)[0].map(s => s.trim())
 
   const json = {}
@@ -50,3 +50,11 @@ function lineToJson (line, columnNames) {
   })
   return json
 } // lineToJson
+
+function jsonToRewind (json, model) {
+  const modelName = `${model.namespace}.${model.name}`
+  const keyString = model.primaryKey.map(k => json[k]).join('_')
+  const oldValue = JSON.stringify(json)
+
+  return `${modelName},${keyString},'${oldValue}','{"action":"conflict"}'`
+} // jsonToRewind
