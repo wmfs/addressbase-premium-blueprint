@@ -1,5 +1,4 @@
 const csvParse = require('csv-string').parse
-const _ = require('lodash')
 
 function importConflictConvertor (ctx) {
   const models = ctx.blueprintComponents.models
@@ -19,11 +18,7 @@ function columnNames (line) {
     all: [],
     pk: []
   }
-  const parsed = csvParse(line.toString())[0]
-
-  for (let i = 0; i < parsed.length; i++) {
-    parsed[i] = _.trim(parsed[i])
-  }
+  const parsed = csvParse(line.toString())[0].map(s => s.trim())
 
   if (line.toString().indexOf(PK_COLUMN_PREFIX) !== -1) {
     parsed.forEach(
