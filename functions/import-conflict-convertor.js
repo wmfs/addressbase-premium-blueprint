@@ -18,23 +18,23 @@ function columnNames (line) {
     all: [],
     pk: []
   }
-  const parsed = csvParse(line.toString())[0].map(s => s.trim())
+  const parsed = csvParse(line.toString())[0].map(s => s.trim().toLowerCase())
 
   if (line.toString().indexOf(PK_COLUMN_PREFIX) !== -1) {
     parsed.forEach(
       function (rawColumnName) {
         if (rawColumnName[0] === PK_COLUMN_PREFIX) {
-          const trimmed = rawColumnName.substring(1).toLowerCase()
+          const trimmed = rawColumnName.substring(1)
           columnNames.all.push(trimmed)
           columnNames.pk.push(trimmed)
         } else {
-          columnNames.all.push(rawColumnName.toLowerCase())
+          columnNames.all.push(rawColumnName)
         }
       }
     )
   } else {
     for (let i = 0, colCount = parsed.length; i < colCount; i++) {
-      const val = parsed[i].toLowerCase()
+      const val = parsed[i]
       if (i === 0) {
         columnNames.all.push(val)
         columnNames.pk.push(val)
