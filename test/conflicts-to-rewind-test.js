@@ -9,7 +9,7 @@ const path = require('path')
 
 describe('transform conflicts file to rewind audit entry', function () {
   this.timeout(process.env.TIMEOUT || 5000)
-  let tymlyService, functions
+  let tymlyService, conflictConvertor
 
   before('set up tymly', async () => {
     const tymlyServices = await tymly.boot(
@@ -28,12 +28,20 @@ describe('transform conflicts file to rewind audit entry', function () {
     )
 
     tymlyService = tymlyServices.tymly
-    functions = tymlyServices.functions
+    conflictConvertor = tymlyServices.functions.functions.ordnanceSurvey_importConflictConvertor
   })
 
   it('convert gazetteer conflicts', () => {
-    const conflictConvertor = functions.functions.ordnanceSurvey_importConflictConvertor
     expect(conflictConvertor).to.exist()
+  })
+
+  it('column names', () => {
+    const headerLine = '.uprn,.counter,lpi_key,street_name_1,area_name_1,post_town,postcode'
+
+    const columnNames = conflictConvertor.func.columnNames(headerLine)
+
+    expect(columnNames.pk).to.contain('uprn', 'counter')
+    expect(columnNames.all).to.contain('uprn', 'counter', 'lpi_key', 'street_name_1', 'area_name_1', 'post_town', 'postcode')
   })
 
   after('shutdown tymly', async () => {
