@@ -36,12 +36,12 @@ describe('transform conflicts file to rewind audit entry', function () {
   })
 
   it('column names', () => {
-    const headerLine = '.uprn,.counter,lpi_key,street_name_1,area_name_1,post_town,postcode'
+    const headerLine = '.UPRN,.counter,lpi_key,street_name_1,area_name_1,post_town,postcode'
 
     const columnNames = conflictConvertor.func.columnNames(headerLine)
 
-    expect(columnNames.pk).to.contain('uprn', 'counter')
-    expect(columnNames.all).to.contain('uprn', 'counter', 'lpi_key', 'street_name_1', 'area_name_1', 'post_town', 'postcode')
+    expect(columnNames.pk).to.eql(['uprn', 'counter'])
+    expect(columnNames.all).to.eql(['uprn', 'counter', 'lpi_key', 'street_name_1', 'area_name_1', 'post_town', 'postcode'])
   })
 
   after('shutdown tymly', async () => {
