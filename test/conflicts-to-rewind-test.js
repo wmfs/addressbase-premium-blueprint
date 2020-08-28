@@ -49,7 +49,7 @@ describe('transform conflicts file to rewind audit entry', function () {
       pk: ['uprn', 'counter'],
       all: ['uprn', 'counter', 'lpi_key', 'street_name_1', 'area_name_1', 'post_town', 'postcode']
     }
-    const line = '12345678,1,abcdef,1 Trouser Street,Pantaloon Alleys,Legville,LG1 2PR'
+    const line = '12345678,1,abcdef,1 Trouser Street,Pantaloon Alley,Legville,LG1 2PR'
 
     const json = conflictConvertor.func.lineToJson(line, columnNames)
     expect(json).to.eql({

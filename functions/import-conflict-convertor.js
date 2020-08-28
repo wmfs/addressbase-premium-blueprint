@@ -8,6 +8,7 @@ module.exports = function (ctx) {
   }
 
   convertConflictsToRewind.columnNames = columnNames
+  convertConflictsToRewind.lineToJson = lineToJson
 
   return convertConflictsToRewind
 }
@@ -40,4 +41,12 @@ function columnNames (line) {
 
 function lineToJson (line, columnNames) {
 
+  const columns = csvParse(line)[0].map(s => s.trim())
+
+  const json = {}
+  columns.forEach((value, i) => {
+    const name = columnNames.all[i]
+    json[name] = value
+  })
+  return json
 } // lineToJson
