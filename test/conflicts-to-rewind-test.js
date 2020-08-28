@@ -44,6 +44,25 @@ describe('transform conflicts file to rewind audit entry', function () {
     expect(columnNames.all).to.eql(['uprn', 'counter', 'lpi_key', 'street_name_1', 'area_name_1', 'post_town', 'postcode'])
   })
 
+  it('line to json', () => {
+    const columnNames = {
+      pk: ['uprn', 'counter'],
+      all: ['uprn', 'counter', 'lpi_key', 'street_name_1', 'area_name_1', 'post_town', 'postcode']
+    }
+    const line = '12345678,1,abcdef,1 Trouser Street,Pantaloon Alleys,Legville,LG1 2PR'
+
+    const json = conflictConvertor.func.lineToJson(line, columnNames)
+    expect(json).to.eql({
+      uprn: '12345678',
+      counter: '1',
+      lpi_key: 'abcdef',
+      street_name_1: '1 Trouser Street',
+      area_name_1: 'Pantaloon Alley',
+      post_town: 'Legville',
+      postcode: 'LG1 2PR'
+    })
+  })
+
   after('shutdown tymly', async () => {
     await tymlyService.shutdown()
   })

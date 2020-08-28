@@ -1,6 +1,6 @@
 const csvParse = require('csv-string').parse
 
-function importConflictConvertor (ctx) {
+module.exports = function (ctx) {
   const models = ctx.blueprintComponents.models
 
   function convertConflictsToRewind () {
@@ -36,6 +36,8 @@ function columnNames (line) {
   }
 
   return columnNames
-}
+} // columnNames
 
-module.exports = importConflictConvertor
+function lineToJson (line, columnNames) {
+
+} // lineToJson
