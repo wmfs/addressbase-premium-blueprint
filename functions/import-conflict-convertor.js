@@ -17,8 +17,7 @@ function columnNames (line) {
   const PK_COLUMN_PREFIX = '.'
   const columnNames = {
     all: [],
-    pk: [],
-    attributes: []
+    pk: []
   }
   const parsed = csvParse(line.toString())[0]
 
@@ -35,7 +34,6 @@ function columnNames (line) {
           columnNames.pk.push(trimmed)
         } else {
           columnNames.all.push(rawColumnName.toLowerCase())
-          columnNames.attributes.push(rawColumnName.toLowerCase())
         }
       }
     )
@@ -47,7 +45,6 @@ function columnNames (line) {
         columnNames.pk.push(val)
       } else {
         columnNames.all.push(val)
-        columnNames.attributes.push(val)
       }
     }
   }
