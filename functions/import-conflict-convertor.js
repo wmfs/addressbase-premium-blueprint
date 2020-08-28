@@ -1,10 +1,39 @@
 const csvParse = require('csv-string').parse
+const fs = require('fs')
+const fsp = fs.promises
+const path = require('path')
+const once = require('events')
+const stream = require('stream')
+const util = require('util')
+const finished = util.promisify(stream.finished)
+
 
 module.exports = function (ctx) {
   const models = ctx.blueprintComponents.models
 
-  function convertConflictsToRewind () {
+  async function convertConflictsToRewind (schemaName, csvFileName) {
+    const qualifiedModelName = `${schemaName}_${path.basename(csvFileName, '.csv')}`
+    const model = models[qualifiedModelName]
 
+    const rewindFile = await createRewindFileStream(path.dirname(csvFileName))
+
+    let columns = null
+    for await (const line of readLines(csvFileName)) {
+      if (!columns) {
+        columns = columnNames(line)
+        continue
+      }
+
+      const json = lineToJson(line, columns)
+      const rewind = jsonToRewind(json, model)
+
+      if (!rewindFile.write(rewind)) {
+        await once(rewindFile, 'drain')
+      }
+    }
+
+    rewindFile.end()
+    await finished(rewindFile)
   }
 
   convertConflictsToRewind.columnNames = columnNames
@@ -24,7 +53,7 @@ function columnNames (line) {
 } // columnNames
 
 function lineToJson (line, columnNames) {
-  const columns = csvParse(line)[0].map(s => s.trim())
+  const columns = csvParse(line.toString())[0].map(s => s.trim())
 
   const json = {}
   columns.forEach((value, i) => {
@@ -40,5 +69,33 @@ function jsonToRewind (json, model) {
   const keyString = model.primaryKey.map(k => json[k]).join('_')
   const oldValue = JSON.stringify(json)
 
-  return `${modelName},${keyString},'${oldValue}','{"action":"conflict"}'`
+  return `${modelName},${keyString},'${oldValue}','{"action":"conflict"}'\n`
 } // jsonToRewind
+
+async function * readLines (csvFilename) {
+  let previous = ''
+  for await (const chunk of fs.createReadStream(csvFilename)) {
+    previous += chunk
+    while (true) {
+      const eolIndex = previous.indexOf('\n')
+      if (eolIndex < 0) break
+
+      // line includes the EOL
+      const line = previous.slice(0, eolIndex + 1)
+      yield line
+      previous = previous.slice(eolIndex + 1)
+    }
+  }
+  if (previous.length > 0) {
+    yield previous
+  }
+} // readLines
+
+async function createRewindFileStream (directory) {
+  const insertDir = path.join(directory, 'inserts')
+  await fsp.mkdir(insertDir)
+  const rewindCsv = path.join(insertDir, 'rewind.csv')
+  const stream = fs.createWriteStream(rewindCsv)
+  stream.write('model_name,key_string,old_values,diff\n')
+  return stream
+} // createRewindFileStream
