@@ -7,17 +7,19 @@ const stream = require('stream')
 const util = require('util')
 const finished = util.promisify(stream.finished)
 
-
 module.exports = function (ctx) {
   const models = ctx.blueprintComponents.models
 
-  async function convertConflictsToRewind (schemaName, csvFileName) {
-    const qualifiedModelName = `${schemaName}_${path.basename(csvFileName, '.csv')}`
+  async function convertConflictsToRewind (tableName, syncDir) {
+    const [schemaName, modelName] = tableName.split('.')
+    const qualifiedModelName = `${schemaName}_${modelName}`
     const model = models[qualifiedModelName]
 
-    const rewindFile = await createRewindFileStream(path.dirname(csvFileName))
+    const conflictsDir = path.join(syncDir, 'conflicts')
+    const rewindFile = await createRewindFileStream(conflictsDir)
 
     let columns = null
+    const csvFileName = path.join(conflictsDir, `${modelName}.csv`)
     for await (const line of readLines(csvFileName)) {
       if (!columns) {
         columns = columnNames(line)
@@ -93,7 +95,12 @@ async function * readLines (csvFilename) {
 
 async function createRewindFileStream (directory) {
   const insertDir = path.join(directory, 'inserts')
-  await fsp.mkdir(insertDir)
+
+  // I know we don't really want to do a sync operation,
+  // but we won't do this very often
+  if (!fs.existsSync(insertDir)) {
+    await fsp.mkdir(insertDir)
+  }
   const rewindCsv = path.join(insertDir, 'rewind.csv')
   const stream = fs.createWriteStream(rewindCsv)
   stream.write('model_name,key_string,old_values,diff\n')

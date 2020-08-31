@@ -13,8 +13,10 @@ describe('transform conflicts file to rewind audit entry', function () {
   this.timeout(process.env.TIMEOUT || 5000)
   let tymlyService, conflictConvertor, gazetteerModel
 
-  const conflictsDir = path.join(__dirname, './fixtures/rewind/property/sync/conflicts')
-  const gazetteerCsv = path.join(conflictsDir, 'gazetteer.csv')
+  const fixtureDir = path.resolve(__dirname, './fixtures/rewind/')
+  const syncDir = path.join(fixtureDir, 'property/sync')
+  const conflictsDir = path.join(syncDir, 'conflicts')
+  const rewindExpectedCsv = path.join(fixtureDir, 'rewind-expected.csv')
   const rewindDir = path.join(conflictsDir, 'inserts')
 
   before('set up tymly', async () => {
@@ -80,8 +82,20 @@ describe('transform conflicts file to rewind audit entry', function () {
     const rewind = conflictConvertor.func.jsonToRewind(json, gazetteerModel)
 
     expect(rewind).to.eql(
-      'wmfs.gazetteer,12345678_1,\'{"uprn":"12345678","counter":"1","street_name_1":"1 Trouser Street"}\',\'{"action":"conflict"}\''
+      'wmfs.gazetteer,12345678_1,\'{"uprn":"12345678","counter":"1","street_name_1":"1 Trouser Street"}\',\'{"action":"conflict"}\'\n'
     )
+  })
+
+  it('process file', async () => {
+    await conflictConvertor.func('wmfs.gazetteer', syncDir)
+
+    const rewindCsv = path.join(rewindDir, 'rewind.csv')
+    expect(fs.existsSync(rewindCsv)).to.be.true()
+
+    const rewind = fs.readFileSync(rewindCsv).toString().split('\n')
+    const expected = fs.readFileSync(rewindExpectedCsv).toString().split('\n')
+
+    expect(rewind).to.eql(expected)
   })
 
   after('shutdown tymly', async () => {
