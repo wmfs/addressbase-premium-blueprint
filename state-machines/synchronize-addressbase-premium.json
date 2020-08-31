@@ -9,6 +9,9 @@
       "ResourceConfig": {
         "stateMachine": "ordnanceSurvey_synchronizeAddressbasePremiumProperties_1_0"
       },
+      "Parameters": {
+        "outputDir.$": "$.property.outputDir"
+      },
       "Next": "SynchronizeStreets"
     },
     "SynchronizeStreets": {
@@ -16,6 +19,9 @@
       "Resource": "module:runStateMachine",
       "ResourceConfig": {
         "stateMachine": "ordnanceSurvey_synchronizeAddressbasePremiumStreets_1_0"
+      },
+      "Parameters": {
+        "outputDir.$": "$.streets.outputDir"
       },
       "End": true
     }

@@ -25,6 +25,30 @@
           "counter": "counter"
         }
       },
+      "Next": "ProcessConflicts"
+    },
+    "ProcessConflicts": {
+      "Type": "Task",
+      "Resource": "function:ordnanceSurvey_importConflictConvertor",
+      "Parameters": {
+        "tableName": "wmfs.gazetteer",
+        "syncDir.$": "$.outputDir"
+      },
+      "Next": "InsertConflictsIntoRewind"
+    },
+    "InsertConflictsIntoRewind": {
+      "Type": "Task",
+      "InputPath": "$.rewindDir",
+      "Resource": "module:importingCsvFiles",
+      "ResourceConfig": {
+        "headerColumnNamePkPrefix": ".",
+        "topDownTableOrder": [
+          "rewind"
+        ],
+        "schemaName": "tymly",
+        "quote": "'",
+        "truncateTables": false
+      },
       "End": true
     }
   },
