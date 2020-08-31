@@ -1,3 +1,55 @@
+# [1.188.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.187.0...v1.188.0) (2020-08-31)
+
+
+### ✨ Features
+
+* Declared importConflictConvertor ([5342c05](https://github.com/wmfs/addressbase-premium-blueprint/commit/5342c057fbfc00e1d35d7c8bbac0357ccea10db4))
+* Process a conflicts file to a rewind inserts csv ([30f302a](https://github.com/wmfs/addressbase-premium-blueprint/commit/30f302a50782f6cfccd51ae29695208d1d634a65))
+* Record import conflicts in tymly.rewind table. ([a10f85f](https://github.com/wmfs/addressbase-premium-blueprint/commit/a10f85f7d52d8b9c1e0989ff5f800f0ea80637a2))
+
+
+### 🐛 Bug Fixes
+
+* convert a csv line into a json object ([466369a](https://github.com/wmfs/addressbase-premium-blueprint/commit/466369a3f915dc0db02b3b6b8ecfe50c1056c167))
+* Don't need lodash to trim a string. ([0868ecf](https://github.com/wmfs/addressbase-premium-blueprint/commit/0868ecf126abad7debc08f9d8a269bb8344061e6))
+* Don't need to pick up primary key from csv header ([93f52eb](https://github.com/wmfs/addressbase-premium-blueprint/commit/93f52eb98fbdd7dcb0b82219b493ece8c96857fe))
+* Don't think I'll need attributes, so discard ([5e91eb7](https://github.com/wmfs/addressbase-premium-blueprint/commit/5e91eb7b95f3444b52ceb89d4972eb3de9753a89))
+* Fix effects of pg-telepods changes ([0032fa8](https://github.com/wmfs/addressbase-premium-blueprint/commit/0032fa8c36b3f5d0fa004238496c09636d819531))
+* Grab the models, we're going to need them. ([c3c0887](https://github.com/wmfs/addressbase-premium-blueprint/commit/c3c0887432a71af52134b0ec75c4760200f7ea9c))
+* start to parse a csvline to a json object to drop into the rewind.old_values column ([d94c31c](https://github.com/wmfs/addressbase-premium-blueprint/commit/d94c31c647ab4746fccdd2bf9883484497a5ed1a))
+* Tweak function parameters to fit better with what's available in a state machine. ([5dca5f7](https://github.com/wmfs/addressbase-premium-blueprint/commit/5dca5f7198bd901ce84cf50499b9ea80157ad863))
+* We don't need two loops to do more or less the same thing ([d1cc82c](https://github.com/wmfs/addressbase-premium-blueprint/commit/d1cc82c5f6696a82ac8858363a0022bcb0d8cb0f))
+* working on pulling column names from first line of csv file ([fa49677](https://github.com/wmfs/addressbase-premium-blueprint/commit/fa496771a1b8bb4dfcbfd0a616add0d4de69711f))
+
+
+### 🛠 Builds
+
+* Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin to 1.225.0 from 1.224.0 ([70592b8](https://github.com/wmfs/addressbase-premium-blueprint/commit/70592b848f61e7fb098a33f6130275fb3165e6e8))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.153.0 to 1.154.0 ([26a1613](https://github.com/wmfs/addressbase-premium-blueprint/commit/26a16131df573eaec8e0a5055502b9e018876e7f))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.154.0 to 1.155.0 ([f3fa1fd](https://github.com/wmfs/addressbase-premium-blueprint/commit/f3fa1fdf32ce2d399b7bbaeac560f106b9588220))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.155.0 to 1.157.0 ([99b1fb9](https://github.com/wmfs/addressbase-premium-blueprint/commit/99b1fb9afcc9115e92669e9c82e4e17c76c37b50))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.157.0 to 1.158.0 ([b1eb3ce](https://github.com/wmfs/addressbase-premium-blueprint/commit/b1eb3ce7e5b233f9955bc2882ab265bf67b5a7c7))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.158.0 to 1.159.0 ([c77afa4](https://github.com/wmfs/addressbase-premium-blueprint/commit/c77afa4729b3941a886442759d9a0b29e4dfd9ca))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly from 1.159.0 to 1.160.0 ([d93cbad](https://github.com/wmfs/addressbase-premium-blueprint/commit/d93cbadc7d361a2ce37315e7eaf974629b860e5a))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-etl-plugin from 1.139.0 to 1.140.0 ([0b407ad](https://github.com/wmfs/addressbase-premium-blueprint/commit/0b407ad30a59911bfdaf994c703a00cca46a8432))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.215.0 to 1.215.1 ([6952ed1](https://github.com/wmfs/addressbase-premium-blueprint/commit/6952ed15d4f7693046ebc0ecb50c5b97219eb006))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.215.1 to 1.216.0 ([79a54bd](https://github.com/wmfs/addressbase-premium-blueprint/commit/79a54bdb6e30e52c0082cbe6c2f970dff65c916e))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.216.0 to 1.223.0 ([6561007](https://github.com/wmfs/addressbase-premium-blueprint/commit/6561007fce6b33604844acec8a8cc2cb6285db1c))
+* **deps-dev:** Bump [@wmfs](https://github.com/wmfs)/tymly-pg-plugin from 1.223.0 to 1.224.0 ([3f873d5](https://github.com/wmfs/addressbase-premium-blueprint/commit/3f873d57513d1aa25817d5ade9fe706b1ac66d90))
+* **deps-dev:** Bump codecov from 3.7.1 to 3.7.2 ([228fd42](https://github.com/wmfs/addressbase-premium-blueprint/commit/228fd4292357ce90817e9abe4eed64a224741df8))
+* **deps-dev:** Bump cz-conventional-changelog from 3.2.0 to 3.2.1 ([0316d5a](https://github.com/wmfs/addressbase-premium-blueprint/commit/0316d5aa4ad3d75bc4e12aadbf886dda6a578419))
+* **deps-dev:** Bump cz-conventional-changelog from 3.2.1 to 3.3.0 ([e8ffb82](https://github.com/wmfs/addressbase-premium-blueprint/commit/e8ffb829be2a626eb529068320e9ede475c1452b))
+* **deps-dev:** Bump mocha from 8.0.1 to 8.1.0 ([bbd3c09](https://github.com/wmfs/addressbase-premium-blueprint/commit/bbd3c0942736d87423811c302c479750efa583b6))
+* **deps-dev:** Bump mocha from 8.1.0 to 8.1.1 ([f17354d](https://github.com/wmfs/addressbase-premium-blueprint/commit/f17354d646953d6e66c541bad1f4e5ecd99e69a6))
+* **deps-dev:** Bump mocha from 8.1.1 to 8.1.2 ([09b5f23](https://github.com/wmfs/addressbase-premium-blueprint/commit/09b5f23866f2ae38bac594a058febe4f7ab9e0a7))
+* **deps-dev:** Bump mocha from 8.1.2 to 8.1.3 ([7e26852](https://github.com/wmfs/addressbase-premium-blueprint/commit/7e268520f63b71b0c888b5ad3b56033b7a1b147b))
+
+
+### 🚨 Tests
+
+* Move setup and teardown into before and after methods ([5a07e17](https://github.com/wmfs/addressbase-premium-blueprint/commit/5a07e17328d706b6aad75040d0fbcbc64cad0f9b))
+* Starting to work on converting conflict rows to rewind table entries. ([e5e4bfc](https://github.com/wmfs/addressbase-premium-blueprint/commit/e5e4bfcc949e09a6ab816b13606a0150eb2666cb))
+
 # [1.187.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.186.1...v1.187.0) (2020-07-20)
 
 
