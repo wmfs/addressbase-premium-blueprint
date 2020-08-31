@@ -16,7 +16,7 @@ module.exports = function (ctx) {
     const model = models[qualifiedModelName]
 
     const conflictsDir = path.join(syncDir, 'conflicts')
-    const rewindFile = await createRewindFileStream(conflictsDir)
+    const rewindFile = await createRewindFileStream(path.join(conflictsDir, 'inserts'))
 
     let columns = null
     const csvFileName = path.join(conflictsDir, `${modelName}.csv`)
@@ -36,6 +36,8 @@ module.exports = function (ctx) {
 
     rewindFile.end()
     await finished(rewindFile)
+
+    return { rewindDir: conflictsDir }
   }
 
   convertConflictsToRewind.columnNames = columnNames
@@ -93,9 +95,7 @@ async function * readLines (csvFilename) {
   }
 } // readLines
 
-async function createRewindFileStream (directory) {
-  const insertDir = path.join(directory, 'inserts')
-
+async function createRewindFileStream (insertDir) {
   // I know we don't really want to do a sync operation,
   // but we won't do this very often
   if (!fs.existsSync(insertDir)) {
