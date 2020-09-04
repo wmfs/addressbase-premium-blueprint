@@ -41,7 +41,7 @@
     "@wmfs/tymly-test-helpers": "1.6.0",
     "@wmfs/gazetteer-blueprint": "1.27.2",
     "@wmfs/tymly-etl-plugin": "1.140.0",
-    "@wmfs/tymly-pg-plugin": "1.225.0"
+    "@wmfs/tymly-pg-plugin": "1.225.1"
   },
   "scripts": {
     "lint": "standard",
