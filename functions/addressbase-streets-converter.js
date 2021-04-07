@@ -3,6 +3,7 @@ function streetsConverter () {
   return function streetsConverter (sourceRow, callback) {
     const output = {
       usrn: sourceRow.usrn,
+      counter: 1,
       state: sourceRow.state,
       description: sourceRow.description,
       locality: sourceRow.locality,
