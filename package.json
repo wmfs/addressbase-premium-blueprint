@@ -39,7 +39,7 @@
     "@semantic-release/exec": "5.0.0",
     "@wmfs/tymly": "1.206.0",
     "@wmfs/tymly-test-helpers": "1.7.0",
-    "@wmfs/gazetteer-blueprint": "1.32.1",
+    "@wmfs/gazetteer-blueprint": "1.32.2",
     "@wmfs/tymly-etl-plugin": "1.153.0",
     "@wmfs/tymly-pg-plugin": "1.247.0"
   },
