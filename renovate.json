@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "dependencyDashboard": true,
+  "enabledManagers": ["npm"],
+  "hostRules": [
+    {
+      "hostType": "npm",
+      "matchHost": "registry.npmjs.org",
+      "encrypted": {
+      "token": "r7mcPC5zno+6tHJSXmgLJGZIWU9ChApAGVTffq+TXvizuY1q7lqlVBggbyyXk6vBDc5bONNxpBR9oIRbW23ZsEfDmJ9IXW4BfU9rF+wqaRc6BODTqzvjBsx6D29P42Skk/0ExicnU40LqpvSgtjpfSSzf8I5ntHj0prkil2sK/m1mg+pTB+ed6emjIXezHmbJ/7ShGC2EH072NibSmKaF/LP1xsr+GHFEjQWVVNAENb/hqpJGRdCtKEeOb4I7BmEV0+OybUc4wbZUit+SQ9q2Qc0RUpaZWuyLh/t2O2aDElq+OLM/UojklQAtNQ+n0i4f4HFJ+pSOvZTVY417FpTZQ=="
+     }
+    }
+  ],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true,
+      "semanticCommitType": "build",
+      "semanticCommitScope": "deps-dev",
+      "labels": ["devDependencies"]
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "build",
+      "semanticCommitScope": "deps",
+      "labels": ["dependencies"],
+      "reviewers": ["team:tymly-reviewers"]
+    }
+  ],
+    "vulnerabilityAlerts": {
+    "labels": ["security"]
+  }
+}
