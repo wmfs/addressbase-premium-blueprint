@@ -38,7 +38,7 @@
     "@semantic-release/git": "9.0.1",
     "@semantic-release/exec": "5.0.0",
     "@wmfs/tymly": "1.212.3",
-    "@wmfs/tymly-test-helpers": "1.8.0",
+    "@wmfs/tymly-test-helpers": "1.10.0",
     "@wmfs/gazetteer-blueprint": "1.34.0",
     "@wmfs/vision-gazetteer-blueprint": "1.0.0",
     "@wmfs/tymly-etl-plugin": "1.155.0",
