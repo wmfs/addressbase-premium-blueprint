@@ -40,7 +40,6 @@
     "@wmfs/tymly": "1.213.0",
     "@wmfs/tymly-test-helpers": "1.10.0",
     "@wmfs/gazetteer-blueprint": "1.37.0",
-    "@wmfs/vision-gazetteer-blueprint": "1.0.0",
     "@wmfs/tymly-etl-plugin": "1.155.0",
     "@wmfs/tymly-pg-plugin": "1.256.0"
   },
