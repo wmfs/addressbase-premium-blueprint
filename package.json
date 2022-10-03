@@ -20,7 +20,7 @@
     "url": "https://github.com/wmfs/addressbase-premium-blueprint/issues"
   },
   "dependencies": {
-    "csv-string": "4.0.1"
+    "csv-string": "4.1.1"
   },
   "devDependencies": {
     "chai": "4.3.6",
