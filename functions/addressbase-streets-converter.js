@@ -1,4 +1,3 @@
-
 function streetsConverter () {
   return function streetsConverter (sourceRow, callback) {
     const output = {
