@@ -1,3 +1,63 @@
+# [1.191.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.190.0...v1.191.0) (2023-09-19)
+
+
+### 🛠 Builds
+
+* **deps-dev:** update dependency [@semantic-release](https://github.com/semantic-release)/changelog to v6.0.2 ([35d4e84](https://github.com/wmfs/addressbase-premium-blueprint/commit/35d4e8470dcd54a2f6ea61d8e65e17aca6daf3ee))
+* **deps-dev:** update dependency [@semantic-release](https://github.com/semantic-release)/changelog to v6.0.3 ([44bfb59](https://github.com/wmfs/addressbase-premium-blueprint/commit/44bfb59a06fe806b857fe2ddcef46c7c54b6f7cc))
+* **deps-dev:** update dependency [@wmfs](https://github.com/wmfs)/tymly-test-helpers to v1.22.2 ([5932db8](https://github.com/wmfs/addressbase-premium-blueprint/commit/5932db8cc5881d66d6043e024f8de6643af0117c))
+* **deps-dev:** update dependency chai to v4.3.7 ([d501261](https://github.com/wmfs/addressbase-premium-blueprint/commit/d5012619f15a6cf3e176c9b18a1f80c27e31ecb8))
+* **deps-dev:** update dependency chai to v4.3.8 ([40f8774](https://github.com/wmfs/addressbase-premium-blueprint/commit/40f87744893bc573f7d274bca778bebf75eff9e3))
+* **deps-dev:** update dependency mocha to v10.2.0 ([1a02241](https://github.com/wmfs/addressbase-premium-blueprint/commit/1a02241d112761087d68ff05184f99b3d65c1ca6))
+* **deps-dev:** update dependency rimraf to v4 ([5d9742c](https://github.com/wmfs/addressbase-premium-blueprint/commit/5d9742c0a8913cdc386887c0289cf5329623c58e))
+* **deps-dev:** update dependency rimraf to v4.0.5 ([1c01a5d](https://github.com/wmfs/addressbase-premium-blueprint/commit/1c01a5d4bd50320f614add47d72e03465e7dc5e5))
+* **deps-dev:** update dependency rimraf to v4.0.7 ([7fa886d](https://github.com/wmfs/addressbase-premium-blueprint/commit/7fa886d5dd21880f6ace89fb81e0a920b770aab8))
+* **deps-dev:** update dependency rimraf to v4.1.0 ([deb115b](https://github.com/wmfs/addressbase-premium-blueprint/commit/deb115b7e6fb5802534138aadff83da80f1de4d2))
+* **deps-dev:** update dependency rimraf to v4.1.1 ([88fecf7](https://github.com/wmfs/addressbase-premium-blueprint/commit/88fecf79c3e949c847e7c58624c42d541cea9eb4))
+* **deps-dev:** update dependency rimraf to v4.1.2 ([02bf7a7](https://github.com/wmfs/addressbase-premium-blueprint/commit/02bf7a79414a4946affbcfb41cc07401a669265a))
+* **deps-dev:** update dependency rimraf to v4.1.3 ([f8a80d2](https://github.com/wmfs/addressbase-premium-blueprint/commit/f8a80d29033cbf15861bc26ffe764b25e1fd1361))
+* **deps-dev:** update dependency rimraf to v4.2.0 ([ae4fa4c](https://github.com/wmfs/addressbase-premium-blueprint/commit/ae4fa4c1858d8c44ac56e7ad28ba2c0588956d43))
+* **deps-dev:** update dependency rimraf to v4.3.0 ([2b485b2](https://github.com/wmfs/addressbase-premium-blueprint/commit/2b485b2979c4f91d0a35daa01faa73071e222346))
+* **deps-dev:** update dependency rimraf to v4.3.1 ([303d8af](https://github.com/wmfs/addressbase-premium-blueprint/commit/303d8afa125b2d765d9296502ebc8ca2d026ecbe))
+* **deps-dev:** update dependency rimraf to v4.4.0 ([46c199b](https://github.com/wmfs/addressbase-premium-blueprint/commit/46c199b27a2243260acca2892a23ee3c745d4cdb))
+* **deps-dev:** update dependency rimraf to v4.4.1 ([6afb365](https://github.com/wmfs/addressbase-premium-blueprint/commit/6afb365e9a761434a344dda935405983dfcdd984))
+* **deps-dev:** update dependency rimraf to v5 ([36c615e](https://github.com/wmfs/addressbase-premium-blueprint/commit/36c615ec4aaaa704b706ff6db83d1f179761f9ec))
+* **deps-dev:** update dependency rimraf to v5.0.1 ([0d5cea9](https://github.com/wmfs/addressbase-premium-blueprint/commit/0d5cea9103ee39ff3c873b58c408e55ab8124800))
+* **deps-dev:** update dependency semantic-release to v20 ([af109eb](https://github.com/wmfs/addressbase-premium-blueprint/commit/af109ebaafc991db88516fc497765283c550fa06))
+* **deps-dev:** update dependency semantic-release to v20.0.1 ([a8ef409](https://github.com/wmfs/addressbase-premium-blueprint/commit/a8ef4099dba4383d2816d7521aca48e7bbe841ee))
+* **deps-dev:** update dependency semantic-release to v20.0.2 ([aed23d4](https://github.com/wmfs/addressbase-premium-blueprint/commit/aed23d4c46e4b5ab3f66fd66306b4a876887b6ab))
+* **deps-dev:** update dependency semantic-release to v20.0.3 ([afdf9e6](https://github.com/wmfs/addressbase-premium-blueprint/commit/afdf9e6a05aadcb5aa37988292299e3d805146c0))
+* **deps-dev:** update dependency semantic-release to v20.0.4 ([598fdcb](https://github.com/wmfs/addressbase-premium-blueprint/commit/598fdcbfc926db642626ea930261751bb980e5d3))
+* **deps-dev:** update dependency semantic-release to v20.1.0 ([55b7e6b](https://github.com/wmfs/addressbase-premium-blueprint/commit/55b7e6bf41bf0d9af1535d1664ffa00a5aee2c0e))
+* **deps-dev:** update dependency semantic-release to v20.1.1 ([b391083](https://github.com/wmfs/addressbase-premium-blueprint/commit/b3910836d2c5bf7d43a12bae2865dd858c11db5e))
+* **deps-dev:** update dependency semantic-release to v20.1.3 ([57c6a87](https://github.com/wmfs/addressbase-premium-blueprint/commit/57c6a87089fb4f94e6d58345d725f53fd76ad4f3))
+* **deps-dev:** update dependency semantic-release to v21 ([24b1be2](https://github.com/wmfs/addressbase-premium-blueprint/commit/24b1be212cafa1b874d9d80e1c93d265b7bcf4a2))
+* **deps-dev:** update dependency semantic-release to v21.0.1 ([3fa1a45](https://github.com/wmfs/addressbase-premium-blueprint/commit/3fa1a4514f6f81b370ebc1712e013ed91695a9ec))
+* **deps-dev:** update dependency semantic-release to v21.0.2 ([0a85b4a](https://github.com/wmfs/addressbase-premium-blueprint/commit/0a85b4ac6cd8a1e1053a002e7e3b344661cc2b9d))
+* **deps-dev:** update dependency semantic-release to v21.0.3 ([1e66568](https://github.com/wmfs/addressbase-premium-blueprint/commit/1e66568b81053ac5bb52f2aa152bee805e4321ed))
+* **deps-dev:** update dependency semantic-release to v21.0.5 ([c9e08eb](https://github.com/wmfs/addressbase-premium-blueprint/commit/c9e08eb5eaa20fc220e2ea7f7df6e1201e0518c2))
+* **deps-dev:** update dependency semantic-release to v21.0.6 ([dda6607](https://github.com/wmfs/addressbase-premium-blueprint/commit/dda6607c09808dfa0a6f819b95fd7f939738f3af))
+* **deps-dev:** update dependency semantic-release to v21.0.7 ([8d6b318](https://github.com/wmfs/addressbase-premium-blueprint/commit/8d6b3189232677281c5d710e72dccbaf9075d2bd))
+* **deps-dev:** update dependency semantic-release to v21.0.9 ([f05d935](https://github.com/wmfs/addressbase-premium-blueprint/commit/f05d935f14be7607c58ed43d99508c6d6e1c74fa))
+* **deps-dev:** update dependency semantic-release to v21.1.0 ([c714fa0](https://github.com/wmfs/addressbase-premium-blueprint/commit/c714fa0f37be5eaf198aae693f539b6072f7fd63))
+* **deps-dev:** update dependency semantic-release to v21.1.1 ([a1d397c](https://github.com/wmfs/addressbase-premium-blueprint/commit/a1d397c1e9b7f8558c8048e90008f88a9afc37be))
+* **deps-dev:** update dependency semantic-release to v21.1.2 ([cb69df4](https://github.com/wmfs/addressbase-premium-blueprint/commit/cb69df4c548bb9f87064e45d230e4b9518295d12))
+* **deps-dev:** update dependency semantic-release to v22 ([6b99a46](https://github.com/wmfs/addressbase-premium-blueprint/commit/6b99a462cc1db81560c0984db6ef5643e09e8ea3))
+* **deps-dev:** update dependency standard to v17.1.0 ([fca2bad](https://github.com/wmfs/addressbase-premium-blueprint/commit/fca2bad65f106a6d8c9e2bfb510059bc10239ab5))
+* **deps:** revert semantic-release ([93a7898](https://github.com/wmfs/addressbase-premium-blueprint/commit/93a789858c46b23530e8e00d9beae4dc9499439f))
+
+
+### 📦 Code Refactoring
+
+* standard code styling ([08afa4d](https://github.com/wmfs/addressbase-premium-blueprint/commit/08afa4d3c04dd280c38a6c6d10daf96de38f49e7))
+
+
+### ⚙️ Continuous Integrations
+
+* **circle:** CircleCI update PostgreSQL image to 15 0 [sc-18659] ([1571380](https://github.com/wmfs/addressbase-premium-blueprint/commit/15713805b876a122e7d8169ee993fde60213d457))
+* **circle:** update postgres to 15.1-postgis ([3f1622a](https://github.com/wmfs/addressbase-premium-blueprint/commit/3f1622a7bb890788d399bcc623f73f91773d4c8d))
+* **circle:** update postgres to 15.2-postgis [sc-19693] ([d7c1f29](https://github.com/wmfs/addressbase-premium-blueprint/commit/d7c1f29f56792d6b1f4ed9b1f6ffb16a4cc675e2))
+
 # [1.190.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.189.0...v1.190.0) (2022-11-02)
 
 
