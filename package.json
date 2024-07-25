@@ -23,7 +23,7 @@
     "csv-string": "4.1.1"
   },
   "devDependencies": {
-    "chai": "4.4.1",
+    "chai": "4.5.0",
     "chai-string": "1.5.0",
     "codecov": "3.8.3",
     "conventional-changelog-metahub": "4.0.1",
