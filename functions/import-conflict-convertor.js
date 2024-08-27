@@ -71,7 +71,7 @@ function lineToJson (line, columnNames) {
 function jsonToRewind (json, model) {
   const modelName = `${model.namespace}.${model.name}`
   const keyString = model.primaryKey.map(k => json[k]).join('_')
-  const oldValue = JSON.stringify(json)
+  const oldValue = JSON.stringify(json).replace('\'', '\'\'')
 
   if (keyString === '35005235_1') {
     console.log('')
