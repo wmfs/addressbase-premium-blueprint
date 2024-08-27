@@ -33,6 +33,11 @@
         "tableName": "wmfs.streets",
         "syncDir.$": "$.outputDir"
       },
+      "Next": "LogRewindFile"
+    },
+    "LogRewindFile": {
+      "Type": "Task",
+      "Resource": "function:ordnanceSurvey_logRewindFile",
       "Next": "InsertConflictsIntoRewind"
     },
     "InsertConflictsIntoRewind": {
