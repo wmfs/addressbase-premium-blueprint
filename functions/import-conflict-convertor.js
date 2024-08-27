@@ -2,7 +2,7 @@ const csvParse = require('csv-string').parse
 const fs = require('fs')
 const fsp = fs.promises
 const path = require('path')
-const once = require('events')
+// const once = require('events')
 const stream = require('stream')
 const util = require('util')
 const finished = util.promisify(stream.finished)
@@ -29,9 +29,11 @@ module.exports = function (ctx) {
       const json = lineToJson(line, columns)
       const rewind = jsonToRewind(json, model)
 
-      if (!rewindFile.write(rewind)) {
-        await once(rewindFile, 'drain')
-      }
+      // if (!rewindFile.write(rewind)) {
+      //   await once(rewindFile, 'drain')
+      // }
+
+      await write(rewindFile, rewind)
     }
 
     rewindFile.end()
@@ -106,3 +108,13 @@ async function createRewindFileStream (insertDir) {
   stream.write('model_name,key_string,old_values,diff\n')
   return stream
 } // createRewindFileStream
+
+function write (writer, data) {
+  return new Promise((resolve) => {
+    if (!writer.write(data)) {
+      writer.once('drain', resolve)
+    } else {
+      resolve()
+    }
+  })
+}
