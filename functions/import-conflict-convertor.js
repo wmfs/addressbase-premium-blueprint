@@ -73,16 +73,6 @@ function jsonToRewind (json, model) {
   const keyString = model.primaryKey.map(k => json[k]).join('_')
   const oldValue = JSON.stringify(json).replace('\'', '\'\'')
 
-  if (keyString === '35005235_1') {
-    console.log('')
-    console.log('!!!!!!')
-    console.log('')
-    console.log(`${modelName},${keyString},'${oldValue}','{"action":"conflict"}'\n`)
-    console.log('')
-    console.log('!!!!!!')
-    console.log('')
-  }
-
   return `${modelName},${keyString},'${oldValue}','{"action":"conflict"}'\n`
 } // jsonToRewind
 
