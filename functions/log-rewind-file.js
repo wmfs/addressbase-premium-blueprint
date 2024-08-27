@@ -13,7 +13,16 @@ module.exports = function () {
 
     console.log({ rewindCsv })
 
-    await readCsv(rewindCsv)
+    const lines = fs.readFileSync(rewindCsv, 'utf8').split('\n')
+    console.log(lines[0])
+    console.log(lines[1])
+    console.log(lines[2])
+    console.log(lines[3])
+    console.log(lines[4])
+    console.log(lines[5])
+    console.log(lines[6])
+
+    // await readCsv(rewindCsv)
 
     console.log('')
     console.log('-----')
