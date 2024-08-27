@@ -1,7 +1,7 @@
 {
   "Comment": "Synchronizes addressbase premium properties with wmfs gazetteer.",
   "version": "1.0",
-  "StartAt": "SynchronizingTable",
+  "StartAt": "ProcessConflicts",
   "States": {
     "SynchronizingTable": {
       "Type": "Task",
