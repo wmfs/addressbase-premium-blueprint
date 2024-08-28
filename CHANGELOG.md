@@ -1,3 +1,10 @@
+## [1.191.1](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.191.0...v1.191.1) (2024-08-28)
+
+
+### Bug Fixes
+
+* destructure once fn from events and escape single quotes for pg ([#1011](https://github.com/wmfs/addressbase-premium-blueprint/issues/1011)) ([09150cd](https://github.com/wmfs/addressbase-premium-blueprint/commit/09150cd181c9231b7d8e6df65b7d0211155bcdb4))
+
 # [1.191.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.190.0...v1.191.0) (2023-09-19)
 
 
