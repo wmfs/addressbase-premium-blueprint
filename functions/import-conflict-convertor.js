@@ -2,7 +2,7 @@ const csvParse = require('csv-string').parse
 const fs = require('fs')
 const fsp = fs.promises
 const path = require('path')
-const once = require('events')
+const { once } = require('events')
 const stream = require('stream')
 const util = require('util')
 const finished = util.promisify(stream.finished)
@@ -71,7 +71,7 @@ function lineToJson (line, columnNames) {
 function jsonToRewind (json, model) {
   const modelName = `${model.namespace}.${model.name}`
   const keyString = model.primaryKey.map(k => json[k]).join('_')
-  const oldValue = JSON.stringify(json)
+  const oldValue = JSON.stringify(json).replace(/'/g, '\'\'')
 
   return `${modelName},${keyString},'${oldValue}','{"action":"conflict"}'\n`
 } // jsonToRewind
