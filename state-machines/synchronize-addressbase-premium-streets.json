@@ -21,7 +21,8 @@
           }
         },
         "join": {
-          "usrn": "usrn"
+          "usrn": "usrn",
+          "counter": "counter"
         }
       },
       "Next": "ProcessConflicts"
