@@ -10,7 +10,7 @@
       "ResourceConfig": {
         "transformerFunctionName": "ordnanceSurvey_addressbaseStreetsConverter",
         "source": {
-          "tableName": "ordnance_survey.addressbase_premium_streets_holding",
+          "tableName": "ordnance_survey.addressbase_premium_streets_holding_view",
           "hashSumColumnName": "hash_sum"
         },
         "target": {
@@ -21,7 +21,8 @@
           }
         },
         "join": {
-          "usrn": "usrn"
+          "usrn": "usrn",
+          "counter": "counter"
         }
       },
       "Next": "ProcessConflicts"
