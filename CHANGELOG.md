@@ -1,3 +1,10 @@
+# [1.192.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.191.1...v1.192.0) (2024-10-10)
+
+
+### Features
+
+* [sc-26139] Refresh Tymly Gazetteer (Dev) ([#1017](https://github.com/wmfs/addressbase-premium-blueprint/issues/1017)) ([e3b40a1](https://github.com/wmfs/addressbase-premium-blueprint/commit/e3b40a111607836db6d097d61435ea2200fb7adb))
+
 ## [1.191.1](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.191.0...v1.191.1) (2024-08-28)
 
 
