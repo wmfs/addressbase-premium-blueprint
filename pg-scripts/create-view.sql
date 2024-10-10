@@ -74,15 +74,18 @@ CREATE OR REPLACE VIEW ordnance_survey.addressbase_premium_holding AS
         property.voa_ndrp_desc_code,
         property.voa_ndr_scat_code,
         property.alt_language,
-
         street.description AS street_description,
         street.locality,
         street.town_name,
         street.administrative_area,
-
         concat(property.hash_sum, '-', street.hash_sum) AS hash_sum
+    FROM ordnance_survey.addressbase_premium_property_holding property
+        JOIN ordnance_survey.addressbase_premium_streets_holding street
+        ON (property.usrn = street.usrn)
+    WHERE (property.lpi_status = 1 and (property.pao_text is NULL or property.pao_text != 'STREET RECORD'));
 
-FROM ordnance_survey.addressbase_premium_property_holding property
-    JOIN ordnance_survey.addressbase_premium_streets_holding street
-    ON (property.usrn = street.usrn)
-WHERE (property.lpi_status = 1 and (property.pao_text is NULL or property.pao_text != 'STREET RECORD'));
+CREATE OR REPLACE VIEW ordnance_survey.addressbase_premium_streets_holding_view AS
+    SELECT
+        *,
+        1 as counter
+    FROM ordnance_survey.addressbase_premium_streets_holding;
