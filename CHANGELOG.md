@@ -1,3 +1,5 @@
+## [1.192.1](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.192.0...v1.192.1) (2026-08-12)
+
 # [1.192.0](https://github.com/wmfs/addressbase-premium-blueprint/compare/v1.191.1...v1.192.0) (2024-10-10)
 
 
