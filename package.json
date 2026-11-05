@@ -43,7 +43,8 @@
     "@wmfs/gazetteer-blueprint": "1.42.0",
     "@wmfs/tymly-etl-plugin": "1.191.0",
     "@wmfs/tymly-pg-plugin": "1.353.0",
-    "@wmfs/tymly-conflict-resolution-plugin": "1.9.0"
+    "@wmfs/tymly-conflict-resolution-plugin": "1.9.0",
+    "@wmfs/tymly-cardscript-plugin": "1.57.0"
   },
   "scripts": {
     "lint": "standard",

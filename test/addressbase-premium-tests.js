@@ -60,7 +60,8 @@ describe('process addressbase-premium', function () {
           require.resolve('@wmfs/tymly-etl-plugin'),
           require.resolve('@wmfs/tymly-test-helpers/plugins/allow-everything-rbac-plugin'),
           require.resolve('@wmfs/tymly-pg-plugin'),
-          require.resolve('@wmfs/tymly-conflict-resolution-plugin')
+          require.resolve('@wmfs/tymly-conflict-resolution-plugin'),
+          require.resolve('@wmfs/tymly-cardscript-plugin')
         ],
         blueprintPaths: [
           path.resolve(__dirname, './..'),
