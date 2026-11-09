@@ -18,6 +18,10 @@
           "hashSumColumnName": "origin_hash_sum",
           "where": {
             "data_source": { "equals": "OrdnanceSurvey" }
+          },
+          "softDelete": {
+            "removed_from_supply_at": "$now",
+            "origin_hash_sum": null
           }
         },
         "join": {
