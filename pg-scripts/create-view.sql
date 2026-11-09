@@ -1,5 +1,9 @@
+-- One row per UPRN (the sync joins on uprn + counter), using its preferred LPI.
+-- Approved, provisional and alternative LPIs and street records are kept, and historical ones for
+-- properties already in the gazetteer, so they arrive with Ordnance Survey's own status (8 = historical).
+-- Previously only approved, non-street records got through here, so a refresh removed the rest.
 CREATE OR REPLACE VIEW ordnance_survey.addressbase_premium_holding AS
-    SELECT
+    SELECT DISTINCT ON (property.uprn)
         property.lpi_key,
         property.lpi_status,
         property.uprn,
@@ -82,7 +86,16 @@ CREATE OR REPLACE VIEW ordnance_survey.addressbase_premium_holding AS
     FROM ordnance_survey.addressbase_premium_property_holding property
         JOIN ordnance_survey.addressbase_premium_streets_holding street
         ON (property.usrn = street.usrn)
-    WHERE (property.lpi_status = 1 and (property.pao_text is NULL or property.pao_text != 'STREET RECORD'));
+    -- Historical-only properties are synced only if they're already in the gazetteer:
+    -- keep the ones we hold up to date, but don't load OS's whole archive of retired addresses
+    WHERE property.lpi_status <> 8
+       OR EXISTS (SELECT 1 FROM wmfs.gazetteer g
+                  WHERE g.uprn = property.uprn AND g.counter = 1)
+    ORDER BY
+        property.uprn,
+        CASE property.lpi_status WHEN 1 THEN 1 WHEN 6 THEN 2 WHEN 3 THEN 3 WHEN 8 THEN 4 ELSE 5 END,
+        property.last_update_date DESC NULLS LAST,
+        property.lpi_key;
 
 CREATE OR REPLACE VIEW ordnance_survey.addressbase_premium_streets_holding_view AS
     SELECT
