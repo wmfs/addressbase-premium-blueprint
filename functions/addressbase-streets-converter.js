@@ -18,7 +18,8 @@ function streetsConverter () {
       startLatitude: sourceRow.startLatitude,
       endLongitude: sourceRow.endLongitude,
       endLatitude: sourceRow.endLatitude,
-      dataSource: 'OrdnanceSurvey'
+      dataSource: 'OrdnanceSurvey',
+      removedFromSupplyAt: null // back in the supply, so clear any soft delete from an earlier refresh
     }
 
     callback(null, output)
